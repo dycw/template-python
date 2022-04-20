@@ -6,6 +6,7 @@
   "executionEnvironments": [{ "root": "src" }],
   "typeCheckingMode": "strict",
   "reportMissingTypeStubs": false,
+  "reportUnknownParameterType": false,
   "reportUnknownArgumentType": false,
   "reportUnknownVariableType": false,
   "reportUnknownMemberType": false,
@@ -14,5 +15,5 @@
   "reportMissingSuperCall": "error",
   "reportPropertyTypeMismatch": "error",
   "reportUnnecessaryTypeIgnoreComment": "error",
-  "reportUnusedCallReport": "error"
+  "reportUnusedCallResult": "error"
 }
