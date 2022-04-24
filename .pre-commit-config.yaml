@@ -56,7 +56,7 @@ repos:
       - id: black
   # linters
   - repo: https://github.com/compwa/mirrors-pyright
-    rev: "v1.1.238"
+    rev: "v1.1.239"
     hooks:
       - id: pyright
   - repo: https://github.com/markdownlint/markdownlint
@@ -103,30 +103,29 @@ repos:
     rev: 6.6.0
     hooks:
       - id: pip-compile
-        name: pip-compile requirements.in
+        name: pip-compile
         args:
           [
             --allow-unsafe,
             --generate-hashes,
             --no-annotate,
             --no-header,
-            --output-file=requirements/requirements.txt,
+            --output-file=requirements.txt,
             --quiet,
             --upgrade,
-            requirements/requirements.in,
           ]
-        files: ^requirements/requirements\.(in|txt)$
+        files: ^setup.py$
       - id: pip-compile
-        name: pip-compile requirements-dev.in
+        name: pip-compile (dev)
         args:
           [
             --allow-unsafe,
+            --extra=dev,
             --generate-hashes,
             --no-annotate,
             --no-header,
-            --output-file=requirements/dev.txt,
+            --output-file=requirements-dev.txt,
             --quiet,
             --upgrade,
-            requirements/dev.in,
           ]
-        files: ^requirements/dev\.(in|txt)$
+        files: ^setup.py$
