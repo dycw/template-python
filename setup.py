@@ -44,7 +44,7 @@ setup(  # https://bit.ly/3MJfVyH
             "isort >= 5.10.1, < 5.11",
             # linters
             "flake8 >= 4.0.1, < 4.1",
-            "flake8-absolute-import >= 1.0.0.1, < 1.0.1.0",
+            "flake8-absolute-import >= 1.0.0.1, < 1.0.1",
             "flake8-annotations >= 2.9.0, < 2.10",
             "flake8-bandit >= 3.0.0, < 3.1",
             "flake8-bugbear >= 22.3.23, < 22.4",
