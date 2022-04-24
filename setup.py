@@ -29,8 +29,8 @@ setup(  # https://bit.ly/3MJfVyH
     package_dir={"": "src"},
     include_package_data=True,
     zip_safe=False,
-    install_requires=["gitpython >= 3.1.27, < 3.2"],
-    entry_points={"console_scripts": {}},
+    install_requires=[],
+    entry_points={"console_scripts": []},
     extras_require={
         "dev": [
             # development
