@@ -23,13 +23,18 @@ setup(  # https://bit.ly/3MJfVyH
     author_email="d.wan@icloud.com",
     url="https://github.com/dycw/template",
     packages=find_packages("src"),
+    options={"bdist_wheel": {"universal": "1"}},
+    license="MIT",
+    license_files=["LICENSE"],
     package_dir={"": "src"},
-    python_requires=">= 3.10.4",
+    include_package_data=True,
     zip_safe=False,
     install_requires=["gitpython >= 3.1.27, < 3.2"],
+    entry_points={"console_scripts": {}},
     extras_require={
         "dev": [
             # development
+            "build >= 0.7.0, < 0.8",
             "bump2version >= 1.0.1, < 1.1",
             "pip-tools >= 6.6.0, < 6.7",
             "pre-commit >= 2.18.1, < 2.19",
@@ -57,6 +62,5 @@ setup(  # https://bit.ly/3MJfVyH
             "pytest-xdist >= 2.5.0, < 2.6",
         ]
     },
-    include_package_data=True,
-    options={"bdist_wheel": {"universal": "1"}},
+    python_requires=">= 3.10.4",
 )
