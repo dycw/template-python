@@ -38,3 +38,31 @@ flake8-unused-arguments = "^0.0.10"
 pytest = "^7.1.2"
 pytest-instafail = "^0.4.2"
 pytest-xdist = "^2.5.0"
+
+[tool.pytest.ini_options]
+addopts = ["-rsxX", "--color=auto", "--strict-markers"]
+filterwarnings = ["error", "ignore::DeprecationWarning"]
+looponfailroots = "src"
+minversion = "7.0"
+testpaths = "src/tests"
+xfail_strict = true
+
+[tool.pyright]
+include = ["src"]
+venvPath = ".direnv"
+pythonVersion = "3.10"
+pythonPlatform = "Linux"
+executionEnvironments = [{ root = "src" }]
+typeCheckingMode = "strict"
+reportMissingTypeArgument = false
+reportMissingTypeStubs = false
+reportUnknownParameterType = false
+reportUnknownArgumentType = false
+reportUnknownVariableType = false
+reportUnknownMemberType = false
+reportUntypedBaseClass = false
+reportImplicitStringConcatenation = "error"
+reportMissingSuperCall = "error"
+reportPropertyTypeMismatch = "error"
+reportUnnecessaryTypeIgnoreComment = "error"
+reportUnusedCallResult = "error"
