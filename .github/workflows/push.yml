@@ -13,3 +13,16 @@ jobs:
       - uses: butlerlogic/action-autotag@stable
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
+  publish:
+    runs-on: ubuntu-latest
+    needs: tag
+    steps:
+      - uses: actions/checkout@v2
+      - uses: snok/install-poetry@v1
+      - name: publish
+        run: |
+          git pull --ff-only --tags
+          poetry version $(git describe --tags --abbrev=0)
+          poetry build
+          poetry publish --username __token__ --password ${{ secrets.PYPI_TOKEN }}
