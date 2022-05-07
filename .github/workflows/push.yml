@@ -22,7 +22,5 @@ jobs:
       - uses: snok/install-poetry@v1
       - name: publish
         run: |
-          git pull --ff-only --tags
-          poetry version $(git describe --tags --abbrev=0)
           poetry build
           poetry publish --username __token__ --password ${{ secrets.PYPI_TOKEN }}
