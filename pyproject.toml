@@ -39,12 +39,13 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "dycw-template"
-version = "0.1.4"
+version = "0.1.5"
 description = "DYCW template package"
 authors = ["Derek Wan <d.wan@icloud.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
+gitpython = "^3.1.27"
 
 [tool.poetry.dev-dependencies]
 black = "^22.3.0"
@@ -76,6 +77,7 @@ pytest-xdist = "^2.5.0"
 #### pyright ##################################################################
 [tool.pyright]
 include = ["src"]
+pythonVersion = "3.7"
 executionEnvironments = [{ root = "src" }]
 typeCheckingMode = "strict"
 reportMissingTypeArgument = false

@@ -12,6 +12,6 @@ options.error_on_external_run = True
 
 @session(python=["3.7", "3.8", "3.9", "3.10"])
 def test(session: Session) -> None:
-    session.install("pytest", "pytest-cov", "pytest-xdist")
+    session.install("-r", "requirements-all.txt")
     n = max(round(cpu_count() / 2), 1)
     _ = session.run("pytest", f"-n={n}")
