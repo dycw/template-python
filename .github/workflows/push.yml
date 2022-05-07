@@ -19,6 +19,9 @@ jobs:
     needs: tag
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
       - uses: snok/install-poetry@v1
       - name: publish
         run: |
