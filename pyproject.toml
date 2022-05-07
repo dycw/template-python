@@ -45,6 +45,7 @@ authors = ["Derek Wan <d.wan@icloud.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
+gitpython = "^3.1.27"
 
 [tool.poetry.dev-dependencies]
 black = "^22.3.0"
