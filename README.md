@@ -1,1 +1,3 @@
-# template
+# `dycw-template`
+
+DYCW template package
