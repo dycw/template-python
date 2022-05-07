@@ -7,19 +7,14 @@ on:
 
 jobs:
   lint:
-    name: lint / ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-        version: ["3.7"]
+    name: lint
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - run: pipx install poetry
       - uses: actions/setup-python@v3
         with:
-          python-version: ${{ matrix.version }}
+          python-version: 3.7
           cache: "poetry"
       - run: poetry install
       - run: poetry run pre-commit
