@@ -54,9 +54,13 @@ repos:
     rev: 22.3.0
     hooks:
       - id: black
+  - repo: https://github.com/pycqa/isort
+    rev: 5.10.1
+    hooks:
+      - id: isort
   # linters
   - repo: https://github.com/compwa/mirrors-pyright
-    rev: "v1.1.245"
+    rev: "v1.1.246"
     hooks:
       - id: pyright
   - repo: https://github.com/markdownlint/markdownlint

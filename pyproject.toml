@@ -50,7 +50,7 @@ gitpython = "^3.1.27"
 [tool.poetry.dev-dependencies]
 black = "^22.3.0"
 bump2version = "^1.0.1"
-coverage = { extras = ["toml"], version = "^6.3.2" }
+coverage = { extras = ["toml"], version = "^6.3.3" }
 flake8 = "^4.0.1"
 flake8-absolute-import = "^1.0.0.1"
 flake8-annotations = "^2.9.0"
@@ -82,7 +82,7 @@ executionEnvironments = [{ root = "src" }]
 typeCheckingMode = "strict"
 reportMissingTypeStubs = false
 reportMissingTypeArgument = false
-reportPrivateImportUsage = false
+reportPrivateUsage = false
 reportUnknownArgumentType = false
 reportUnknownMemberType = false
 reportUnknownParameterType = false
