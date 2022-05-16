@@ -10,7 +10,6 @@ target-version = ["py37"]
 [tool.coverage.run]
 branch = true
 data_file = ".coverage/data"
-source = ["app"]
 
 [tool.coverage.report]
 fail_under = 100.0
@@ -39,7 +38,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "dycw-template"
-version = "0.1.10"
+version = "0.1.11"
 description = "DYCW template package"
 authors = ["Derek Wan <d.wan@icloud.com>"]
 
@@ -101,6 +100,7 @@ addopts = [
   "--color=auto",
   "--cov=dycw_template",
   "--cov-report=html",
+  "--cov-report=term",
   "--strict-markers"
 ]
 filterwarnings = ["error", "ignore::DeprecationWarning"]
