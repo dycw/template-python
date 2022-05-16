@@ -100,6 +100,7 @@ addopts = [
   "--color=auto",
   "--cov=dycw_template",
   "--cov-report=html",
+  "--cov-report=term",
   "--strict-markers"
 ]
 filterwarnings = ["error", "ignore::DeprecationWarning"]
