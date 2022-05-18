@@ -22,4 +22,4 @@ jobs:
           python-version: ${{ matrix.version }}
           cache: "poetry"
       - run: poetry install
-      - run: poetry run pytest
+      - run: poetry run pytest --cov-report=term-missing:skip-covered
