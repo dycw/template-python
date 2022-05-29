@@ -39,7 +39,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "dycw-template"
-version = "0.1.14"
+version = "0.1.15"
 description = "DYCW template package"
 authors = ["Derek Wan <d.wan@icloud.com>"]
 
