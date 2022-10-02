@@ -1,5 +1,5 @@
-from dycw_template import negate
+from dycw_template import __version__
 
 
-def test_negate() -> None:
-    assert negate(True) is False
+def test_main() -> None:
+    assert isinstance(__version__, str)
