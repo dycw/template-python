@@ -92,6 +92,7 @@ typeCheckingMode = "strict"
 reportMissingTypeStubs = false
 reportMissingTypeArgument = false
 reportPrivateUsage = false
+reportPrivateImportUsage = false
 reportUnknownArgumentType = false
 reportUnknownMemberType = false
 reportUnknownParameterType = false
