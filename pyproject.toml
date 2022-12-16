@@ -50,7 +50,7 @@ skip_gitignore = true
 style = [
   "https://raw.githubusercontent.com/dycw/nitpick/master/styles/common.toml",
   "https://raw.githubusercontent.com/dycw/nitpick/master/styles/3.10.toml",
-  "https://raw.githubusercontent.com/dycw/nitpick/master/styles/pip-compile-generate-hashes.toml",
+  "https://raw.githubusercontent.com/dycw/nitpick/master/styles/pip-compile-no-hashes.toml",
 ]
 
 #### project ##################################################################
@@ -121,7 +121,6 @@ addopts = [
   "--tb=native"
 ]
 filterwarnings = ["error"]
-looponfailroots = ["src"]
 minversion = "7.0"
 testpaths = ["src/tests"]
 xfail_strict = true
