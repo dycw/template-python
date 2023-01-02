@@ -61,8 +61,6 @@ importlib-metadata==6.0.0
     # via keyring
 iniconfig==1.1.1
     # via pytest
-isort==5.11.4
-    # via dycw-template (pyproject.toml)
 jaraco-classes==3.2.3
     # via keyring
 jeepney==0.8.0

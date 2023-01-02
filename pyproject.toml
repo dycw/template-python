@@ -66,7 +66,7 @@ dev = [
 [tool.pyright]
 include = ["src"]
 exclude = ["**/__pycache__", ".direnv", ".git", ".venv"]
-pythonVersion = "3.10"
+pythonVersion = "3.11"
 executionEnvironments = [{ root = "src" }]
 typeCheckingMode = "strict"
 reportMissingTypeStubs = false
@@ -106,7 +106,7 @@ xfail_strict = true
 fix = true
 line-length = 80
 src = ["src", "tests"]
-target-version = "py310"
+target-version = "py311"
 
 [tool.ruff.flake8-tidy-imports]
 ban-relative-imports = "all"
