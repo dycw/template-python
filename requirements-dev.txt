@@ -102,8 +102,6 @@ pluggy==1.0.0
     #   pytest
 ptyprocess==0.7.0
     # via pexpect
-py==1.11.0
-    # via pytest-forked
 pycparser==2.21
     # via cffi
 pygments==2.14.0
@@ -116,13 +114,10 @@ pytest==7.2.1
     # via
     #   dycw-template (pyproject.toml)
     #   pytest-cov
-    #   pytest-forked
     #   pytest-xdist
 pytest-cov==4.0.0
     # via dycw-template (pyproject.toml)
-pytest-forked==1.4.0
-    # via pytest-xdist
-pytest-xdist==2.5.0
+pytest-xdist==3.1.0
     # via dycw-template (pyproject.toml)
 rfc3986[idna2008]==1.5.0
     # via httpx
