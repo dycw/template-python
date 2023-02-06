@@ -73,7 +73,7 @@ mdurl==0.1.2
     # via markdown-it-py
 more-itertools==9.0.0
     # via jaraco-classes
-mypy-extensions==0.4.3
+mypy-extensions==1.0.0
     # via black
 packaging==23.0
     # via
@@ -143,7 +143,7 @@ virtualenv==20.17.1
     # via hatch
 wheel==0.38.4
     # via pip-tools
-zipp==3.12.0
+zipp==3.12.1
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
