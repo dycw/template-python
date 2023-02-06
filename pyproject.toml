@@ -52,7 +52,6 @@ dependencies = []
 [project.optional-dependencies]
 dev = [
   "black",
-  "bump2version",
   "hatch",
   "pip-tools",
   "pytest",
