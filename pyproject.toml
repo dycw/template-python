@@ -134,6 +134,3 @@ ban-relative-imports = "all"
   "S101", # flake8-bandit, assert-used
 
 ]
-
-[tool.ruff.pydocstyle]
-convention = "numpy"
