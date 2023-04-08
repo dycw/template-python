@@ -36,10 +36,12 @@ cryptography==40.0.1
     # via secretstorage
 distlib==0.3.6
     # via virtualenv
-dycw-utilities[test]==0.8.4
+dycw-utilities[test]==0.8.5
     # via dycw-template (pyproject.toml)
 editables==0.3
     # via hatchling
+exceptiongroup==1.1.1
+    # via dycw-utilities
 execnet==1.9.0
     # via pytest-xdist
 filelock==3.11.0
