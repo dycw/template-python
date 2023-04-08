@@ -127,7 +127,6 @@ ban-relative-imports = "all"
 
 [tool.ruff.per-file-ignores]
 "src/tests/**/*.py" = [
-  "D", # pydocstyle
   "FBT001", # flake8-boolean-trap, boolean-positional-arg-in-function-definition
   "FBT003", # flake8-boolean-trap, boolean-positional-value-in-function-call
   "PLR2004", # refactor, magic-value-comparison
