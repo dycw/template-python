@@ -100,34 +100,13 @@ xfail_strict = true
 
 #### ruff #####################################################################
 [tool.ruff]
-extend-ignore = [
+ignore = [
   "ANN101", # flake8-annotations, missing-type-self
   "ANN102", # flake8-annotations, missing-type-cls
   "ANN401", # flake8-annotations, dynamically-typed-expression
   "B008",  # flake8-bugbear, function-call-argument-default
   "COM812",  # flake8-commas, trailing-comma-missing
-  "D100", # pydocstyle, public-module
-  "D104", # pydocstyle, public-package
-  "D105", # pydocstyle, magic-method
-  "D107", # pydocstyle, public-init
-  "D203", # pydocstyle, pep8
-  "D212", # pydocstyle, pep8
-  "D213", # pydocstyle, pep8
-  "D214", # pydocstyle, pep8
-  "D215", # pydocstyle, pep8
-  "D401", # pydocstyle, non-imperative-mood
-  "D404", # pydocstyle, pep8
-  "D405", # pydocstyle, pep8
-  "D406", # pydocstyle, pep8
-  "D407", # pydocstyle, pep8
-  "D408", # pydocstyle, pep8
-  "D409", # pydocstyle, pep8
-  "D410", # pydocstyle, pep8
-  "D411", # pydocstyle, pep8
-  "D413", # pydocstyle, pep8
-  "D415", # pydocstyle, pep8
-  "D416", # pydocstyle, pep8
-  "D417", # pydocstyle, pep8
+  "D", # pydocstyle
   "PD", # pandas-vet
   "PLR0913", # refactor, too-many-arguments
   "PT012", # flake8-pytest-style, raises-with-multiple-statements
@@ -139,7 +118,7 @@ extend-ignore = [
   "TRY301", # tryceratops, raise-within-try
 
 ]
-extend-select = ["ALL"]
+select = ["ALL"]
 src = ["src", "tests"]
 target-version = "py311"
 
