@@ -4,7 +4,7 @@
 #
 #    pip-compile --allow-unsafe --extra=dev --output-file=requirements-dev.txt pyproject.toml
 #
-anyio==3.6.2
+anyio==3.7.0
     # via httpcore
 atomicwrites==1.4.1
     # via dycw-utilities
@@ -26,7 +26,7 @@ click==8.1.3
     #   hatch
     #   pip-tools
     #   userpath
-coverage[toml]==7.2.5
+coverage[toml]==7.2.7
     # via pytest-cov
 distlib==0.3.6
     # via virtualenv
@@ -44,15 +44,15 @@ h11==0.14.0
     # via httpcore
 hatch==1.7.0
     # via dycw-template (pyproject.toml)
-hatchling==1.17.0
+hatchling==1.17.1
     # via hatch
-httpcore==0.17.0
+httpcore==0.17.2
     # via httpx
-httpx==0.24.0
+httpx==0.24.1
     # via hatch
 hyperlink==21.0.0
     # via hatch
-hypothesis==6.75.3
+hypothesis==6.75.9
     # via dycw-utilities
 idna==3.4
     # via
@@ -119,7 +119,7 @@ pytest==7.3.1
     #   pytest-xdist
 pytest-check==2.1.4
     # via dycw-utilities
-pytest-cov==4.0.0
+pytest-cov==4.1.0
     # via
     #   dycw-template (pyproject.toml)
     #   dycw-utilities
@@ -129,13 +129,13 @@ pytest-randomly==3.12.0
     # via dycw-utilities
 pytest-rerunfailures==11.1.2
     # via dycw-utilities
-pytest-xdist==3.3.0
+pytest-xdist==3.3.1
     # via
     #   dycw-template (pyproject.toml)
     #   dycw-utilities
-rich==13.3.5
+rich==13.4.1
     # via hatch
-ruff==0.0.267
+ruff==0.0.270
     # via dycw-template (pyproject.toml)
 shellingham==1.5.0.post1
     # via hatch
@@ -150,9 +150,9 @@ tomli-w==1.0.0
     # via hatch
 tomlkit==0.11.8
     # via hatch
-trove-classifiers==2023.5.2
+trove-classifiers==2023.5.24
     # via hatchling
-typing-extensions==4.5.0
+typing-extensions==4.6.3
     # via dycw-utilities
 userpath==1.8.0
     # via hatch
@@ -166,5 +166,5 @@ zipp==3.15.0
 # The following packages are considered to be unsafe in a requirements file:
 pip==23.1.2
     # via pip-tools
-setuptools==67.7.2
+setuptools==67.8.0
     # via pip-tools
