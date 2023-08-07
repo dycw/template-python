@@ -52,9 +52,9 @@ dependencies = []
 [project.optional-dependencies]
 dev = [
   "black",
-  "dycw-utilities[test]",
   "hatch",
   "pip-tools",
+  "pytest",
   "pytest-cov",
   "pytest-xdist",
   "ruff",
@@ -87,13 +87,15 @@ reportUnusedCallResult = "error"
 addopts = [
   "-rsxX",
   "--color=auto",
-  "--cov=dycw-template",
+  "--cov=dycw_template",
   "--cov-config=pyproject.toml",
   "--cov-report=html",
   "--strict-markers",
   "--tb=native"
 ]
-filterwarnings = ["error"]
+filterwarnings = [
+  "error",
+  "ignore:The --rsyncdir command line argument and rsyncdirs config variable are deprecated.:DeprecationWarning",]
 minversion = "7.0"
 testpaths = ["src/tests"]
 xfail_strict = true
