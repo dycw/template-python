@@ -23,11 +23,11 @@ click==8.1.7
     #   hatch
     #   pip-tools
     #   userpath
-coverage[toml]==7.3.1
+coverage[toml]==7.3.2
     # via pytest-cov
 distlib==0.3.7
     # via virtualenv
-dycw-utilities[test]==0.13.3
+dycw-utilities[test]==0.13.4
     # via dycw-template (pyproject.toml)
 editables==0.5
     # via hatchling
@@ -49,7 +49,7 @@ httpx==0.25.0
     # via hatch
 hyperlink==21.0.0
     # via hatch
-hypothesis==6.87.1
+hypothesis==6.87.3
     # via dycw-utilities
 identify==2.5.30
     # via pre-commit
@@ -87,7 +87,7 @@ pexpect==4.8.0
     # via hatch
 pip-tools==7.3.0
     # via dycw-template (pyproject.toml)
-platformdirs==3.10.0
+platformdirs==3.11.0
     # via
     #   hatch
     #   virtualenv
