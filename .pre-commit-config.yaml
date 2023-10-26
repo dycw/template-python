@@ -7,7 +7,7 @@ repos:
         args: [--fix]
       - id: ruff-format
   # - repo: https://github.com/dycw/pre-commit-hooks
-  #   rev: 0.8.29
+  #   rev: 0.8.31
   #   hooks:
   #     - id: run-hatch-version
   - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
