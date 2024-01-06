@@ -167,7 +167,7 @@ select = [
   "W",  # pycodestyle
   "YTT",  # flake8-2020
 ]
-src = ["src", "tests"]
+src = ["src"]
 target-version = "py311"
 
 [tool.ruff.lint.extend-per-file-ignores]
