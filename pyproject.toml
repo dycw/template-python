@@ -15,7 +15,7 @@ readme = "README.md"
 requires-python = ">= 3.11"
 
 [project.optional-dependencies]
-dev = ["dycw-utilities[hatch,test]", "pytest-cov", "pip-tools", "pre-commit"]
+dev = ["dycw-utilities[hatch,test]", "pip-tools", "pre-commit", "pytest-cov"]
 
 # coverage
 [tool.coverage]
