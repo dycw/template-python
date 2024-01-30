@@ -34,7 +34,7 @@ coverage[toml]==7.4.1
     #   pytest-cov
 distlib==0.3.8
     # via virtualenv
-dycw-utilities[hatch,test]==0.24.30
+dycw-utilities[hatch,test]==0.24.32
     # via dycw-template (pyproject.toml)
 editables==0.5
     # via hatchling
