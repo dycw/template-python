@@ -4,15 +4,17 @@ default_language_version:
 repos:
   # fixers
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.1.14
+    rev: v0.2.1
     hooks:
       - id: ruff
         args: [--fix]
   - repo: https://github.com/dycw/pre-commit-hooks
-    rev: 0.8.37
+    rev: 0.9.5
     hooks:
       # - id: run-hatch-version
       - id: run-ruff-format
+      - id: run-uv-pip-compile
+        args: [--python-version=3.11]
   - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
     rev: v2.12.0
     hooks:
@@ -52,23 +54,3 @@ repos:
         entry: pyright
         language: system
         types: [python]
-  # compile
-  - repo: https://github.com/jazzband/pip-tools
-    rev: 7.3.0
-    hooks:
-      - id: pip-compile
-        args:
-          - --allow-unsafe
-          - --quiet
-          - --upgrade
-          - pyproject.toml
-        files: ^pyproject\.toml$
-      - id: pip-compile
-        args:
-          - --allow-unsafe
-          - --extra=dev
-          - --output-file=requirements-dev.txt
-          - --quiet
-          - --upgrade
-          - pyproject.toml
-        files: ^pyproject\.toml$

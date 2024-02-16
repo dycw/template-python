@@ -15,7 +15,7 @@ readme = "README.md"
 requires-python = ">= 3.11"
 
 [project.optional-dependencies]
-dev = ["dycw-utilities[hatch,test]", "pip-tools", "pre-commit", "pytest-cov"]
+dev = ["dycw-utilities[hatch,test]", "pre-commit", "pytest-cov"]
 
 # coverage
 [tool.coverage]
@@ -51,7 +51,6 @@ path = "src/dycw_template/__init__.py"
 style = [
   "https://raw.githubusercontent.com/dycw/nitpick/master/styles/3.11.toml",
   "https://raw.githubusercontent.com/dycw/nitpick/master/styles/common.toml",
-  "https://raw.githubusercontent.com/dycw/nitpick/master/styles/pip-compile-no-hashes.toml",
 ]
 
 # pyright
@@ -101,12 +100,17 @@ xfail_strict = true
 
 # ruff
 [tool.ruff]
+src = ["src"]
+target-version = "py311"
+
+[tool.ruff.lint]
 ignore = [
   "ANN101",  # flake8-annotations, missing-type-self
   "ANN102",  # flake8-annotations, missing-type-cls
   "ANN401",  # flake8-annotations, dynamically-typed-expression
   "B008",  # flake8-bugbear, function-call-argument-default
   "COM812",  # flake8-commas, trailing-comma-missing
+  "FIX002",  # flake8-fixme, line-contains-todo
   "PGH003",  # pygrep-hooks, blanket-type-ignore
   "PLR0913",  # refactor, too-many-arguments
   "PT012",  # flake8-pytest-style, raises-with-multiple-statements
@@ -168,8 +172,6 @@ select = [
   "W",  # pycodestyle
   "YTT",  # flake8-2020
 ]
-src = ["src"]
-target-version = "py311"
 
 [tool.ruff.lint.extend-per-file-ignores]
 "src/tests/**/*.py" = [
