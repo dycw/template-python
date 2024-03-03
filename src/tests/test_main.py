@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 from dycw_template import __version__
 
 
