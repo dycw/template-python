@@ -104,9 +104,6 @@ src = ["src"]
 target-version = "py312"
 unsafe-fixes = true
 
-
-
-
 [tool.ruff.lint]
 ignore = [
   "ANN101",  # missing-type-self
@@ -131,7 +128,6 @@ ignore = [
 ]
 select = ["ALL"]
 
-
 [tool.ruff.lint.extend-per-file-ignores]
 "src/tests/**/*.py" = [
   "FBT001",  # boolean-positional-arg-in-function-definition
@@ -142,3 +138,6 @@ select = ["ALL"]
 
 [tool.ruff.lint.flake8-tidy-imports]
 ban-relative-imports = "all"
+
+[tool.ruff.lint.isort]
+required-imports = ["from __future__ import annotations"]
