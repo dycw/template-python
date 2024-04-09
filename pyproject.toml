@@ -90,10 +90,7 @@ addopts = [
   "--cov-report=html",
   "--strict-markers",
 ]
-filterwarnings = [
-  "error",
-  "ignore:The --rsyncdir command line argument and rsyncdirs config variable are deprecated.:DeprecationWarning",
-]
+filterwarnings = ["error"]
 minversion = "8.0"
 testpaths = ["src/tests"]
 xfail_strict = true
