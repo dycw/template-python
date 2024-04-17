@@ -16,7 +16,7 @@ coverage==7.4.4
     # via pytest-cov
 distlib==0.3.8
     # via virtualenv
-dycw-utilities==0.26.29
+dycw-utilities==0.26.30
 editables==0.5
     # via hatchling
 exceptiongroup==1.2.0
@@ -117,7 +117,7 @@ typing-extensions==4.11.0
     # via dycw-utilities
 userpath==1.9.2
     # via hatch
-virtualenv==20.25.2
+virtualenv==20.25.3
     # via hatch
 zstandard==0.22.0
     # via hatch
