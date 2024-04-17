@@ -16,14 +16,14 @@ coverage==7.4.4
     # via pytest-cov
 distlib==0.3.8
     # via virtualenv
-dycw-utilities==0.26.25
+dycw-utilities==0.26.29
 editables==0.5
     # via hatchling
 exceptiongroup==1.2.0
     # via dycw-utilities
 execnet==2.1.1
     # via pytest-xdist
-filelock==3.13.3
+filelock==3.13.4
     # via virtualenv
 h11==0.14.0
     # via httpcore
@@ -38,7 +38,7 @@ hyperlink==21.0.0
     # via hatch
 hypothesis==6.100.1
     # via dycw-utilities
-idna==3.6
+idna==3.7
     # via
     #   anyio
     #   httpx
@@ -111,13 +111,13 @@ tomli-w==1.0.0
     # via hatch
 tomlkit==0.12.4
     # via hatch
-trove-classifiers==2024.3.25
+trove-classifiers==2024.4.10
     # via hatchling
 typing-extensions==4.11.0
     # via dycw-utilities
 userpath==1.9.2
     # via hatch
-virtualenv==20.25.1
+virtualenv==20.25.2
     # via hatch
 zstandard==0.22.0
     # via hatch
