@@ -97,6 +97,7 @@ xfail_strict = true
 
 # ruff
 [tool.ruff]
+extend-exclude = ["**/*.ipynb"]
 src = ["src"]
 target-version = "py312"
 unsafe-fixes = true
@@ -135,16 +136,10 @@ ignore = [
   "ISC001",  # single-line-implicit-string-concatenation
   "ISC002",  # multi-line-implicit-string-concatenation
 ]
+ignore-init-module-imports = false
 select = ["ALL"]
 
 [tool.ruff.lint.extend-per-file-ignores]
-"*.ipynb" = [
-  "B018",  # useless-expression
-  "F403",  # undefined-local-with-import-star
-  "F405",  # undefined-local-with-import-star-usage
-  "PLE1142",  # await-outside-async
-  "S101",  # assert-used
-]
 "src/tests/**/*.py" = [
   "S101",  # assert-used
 ]
