@@ -12,23 +12,21 @@ click==8.1.7
     # via
     #   hatch
     #   userpath
-coverage==7.4.4
+coverage==7.5.1
     # via pytest-cov
 distlib==0.3.8
     # via virtualenv
-dycw-utilities==0.26.31
-editables==0.5
-    # via hatchling
+dycw-utilities==0.26.48
 exceptiongroup==1.2.1
     # via dycw-utilities
 execnet==2.1.1
     # via pytest-xdist
-filelock==3.13.4
+filelock==3.14.0
     # via virtualenv
 h11==0.14.0
     # via httpcore
-hatch==1.9.4
-hatchling==1.21.1
+hatch==1.10.0
+hatchling==1.24.2
     # via hatch
 httpcore==1.0.5
     # via httpx
@@ -36,7 +34,7 @@ httpx==0.27.0
     # via hatch
 hyperlink==21.0.0
     # via hatch
-hypothesis==6.100.1
+hypothesis==6.100.5
     # via dycw-utilities
 idna==3.7
     # via
@@ -51,7 +49,7 @@ jaraco-context==5.3.0
     # via keyring
 jaraco-functools==4.0.1
     # via keyring
-keyring==25.1.0
+keyring==25.2.0
     # via hatch
 markdown-it-py==3.0.0
     # via rich
@@ -71,19 +69,19 @@ pathspec==0.12.1
     # via hatchling
 pexpect==4.9.0
     # via hatch
-platformdirs==4.2.0
+platformdirs==4.2.1
     # via
     #   hatch
     #   virtualenv
-pluggy==1.4.0
+pluggy==1.5.0
     # via
     #   hatchling
     #   pytest
 ptyprocess==0.7.0
     # via pexpect
-pygments==2.17.2
+pygments==2.18.0
     # via rich
-pytest==8.1.1
+pytest==8.2.0
     # via
     #   dycw-utilities
     #   pytest-cov
@@ -95,7 +93,7 @@ pytest-randomly==3.15.0
     # via dycw-utilities
 pytest-rerunfailures==14.0
     # via dycw-utilities
-pytest-xdist==3.5.0
+pytest-xdist==3.6.1
     # via dycw-utilities
 rich==13.7.1
     # via hatch
@@ -117,7 +115,9 @@ typing-extensions==4.11.0
     # via dycw-utilities
 userpath==1.9.2
     # via hatch
-virtualenv==20.25.3
+uv==0.1.39
+    # via hatch
+virtualenv==20.26.1
     # via hatch
 zstandard==0.22.0
     # via hatch
