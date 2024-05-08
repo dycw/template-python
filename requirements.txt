@@ -16,7 +16,7 @@ coverage==7.5.1
     # via pytest-cov
 distlib==0.3.8
     # via virtualenv
-dycw-utilities==0.26.48
+dycw-utilities==0.26.52
 exceptiongroup==1.2.1
     # via dycw-utilities
 execnet==2.1.1
@@ -107,7 +107,7 @@ sortedcontainers==2.4.0
     # via hypothesis
 tomli-w==1.0.0
     # via hatch
-tomlkit==0.12.4
+tomlkit==0.12.5
     # via hatch
 trove-classifiers==2024.4.10
     # via hatchling
@@ -115,7 +115,7 @@ typing-extensions==4.11.0
     # via dycw-utilities
 userpath==1.9.2
     # via hatch
-uv==0.1.39
+uv==0.1.42
     # via hatch
 virtualenv==20.26.1
     # via hatch
