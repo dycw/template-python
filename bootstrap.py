@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from functools import reduce
 from itertools import chain
 from logging import getLogger
-from re import sub
+from re import escape, sub
 from typing import TYPE_CHECKING
 
 from utilities.git import get_repo_name, get_repo_root
@@ -80,7 +80,7 @@ def _yield_paths(root: Path, /) -> Iterator[Path]:
 
 def _apply_replacements(text: str, replacements: Iterable[_Replacement], /) -> str:
     def inner(text: str, replacement: _Replacement, /) -> str:
-        return sub(replacement.from_, replacement.to, text)
+        return sub(escape(replacement.from_), escape(replacement.to), text)
 
     return reduce(inner, replacements, text)
 
