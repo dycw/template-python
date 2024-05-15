@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+from dataclasses import dataclass
+from functools import reduce
+from itertools import chain
 from logging import getLogger
 from re import sub
 from typing import TYPE_CHECKING
@@ -9,11 +12,17 @@ from utilities.git import get_repo_name, get_repo_root
 from utilities.logging import basic_config
 
 if TYPE_CHECKING:
-    from collections.abc import Iterator
+    from collections.abc import Iterable, Iterator
     from pathlib import Path
 
 basic_config()
 _LOGGER = getLogger()
+
+
+@dataclass(frozen=True, kw_only=True)
+class _Replacement:
+    from_: str
+    to: str
 
 
 def main() -> None:
@@ -24,18 +33,25 @@ def main() -> None:
     template_underscore = template_dashed.replace("-", "_")
 
     name = get_repo_name()
-    name_dashed = name.replace("_", "-")
-    name_underscore = name.replace("-", "_")
+    template_replacements = [
+        _Replacement(from_=template_dashed, to=name.replace("_", "-")),
+        _Replacement(from_=template_underscore, to=name.replace("-", "_")),
+    ]
 
-    for dashed, name in [
-        (template_dashed, name_dashed),
-        (template_underscore, name_underscore),
-    ]:
-        _process_root(root, dashed, name)
+    pre_commit_replacements = [
+        _Replacement(from_="# - id: run-hatch-version", to="- id: run-hatch-version")
+    ]
+    replacements = list(chain(template_replacements, pre_commit_replacements))
+    _process_file_contents(root, replacements)
+
+    _process_file_names(root, template_replacements)
 
 
-def _process_root(root: Path, template: str, name: str, /) -> None:
-    _LOGGER.info("Processing %s (%s -> %s)", root, template, name)
+def _process_file_contents(root: Path, replacements: Iterable[_Replacement], /) -> None:
+    replacements = list(replacements)
+    _LOGGER.info(
+        "Processing file contents: %s (%s)", root, _desc_replacements(replacements)
+    )
     for path in _yield_paths(root):
         if path.is_file():
             try:
@@ -44,18 +60,15 @@ def _process_root(root: Path, template: str, name: str, /) -> None:
             except UnicodeDecodeError:
                 _LOGGER.exception("Failed to read %s", path)
             else:
-                new_contents = sub(template, name, old_contents)
+                new_contents = _apply_replacements(old_contents, replacements)
                 if old_contents != new_contents:
                     _LOGGER.info("Re-writing %s...", path)
                     with path.open(mode="w") as fh:
                         _ = fh.write(new_contents)
-    for path in list(_yield_paths(root)):
-        old_stem = path.stem
-        new_stem = sub(template, name, old_stem)
-        new_path = path.with_stem(new_stem)
-        if path != new_path:
-            _LOGGER.info("Renaming %s -> %s...", path, new_path)
-            _ = path.rename(new_path)
+
+
+def _desc_replacements(replacements: Iterable[_Replacement], /) -> str:
+    return ", ".join(f"{r.from_}->{r.to}" for r in replacements)
 
 
 def _yield_paths(root: Path, /) -> Iterator[Path]:
@@ -63,6 +76,27 @@ def _yield_paths(root: Path, /) -> Iterator[Path]:
     for path in root.rglob("**/*"):
         if not any(path.is_relative_to(skip) for skip in skips):
             yield path
+
+
+def _apply_replacements(text: str, replacements: Iterable[_Replacement], /) -> str:
+    def inner(text: str, replacement: _Replacement, /) -> str:
+        return sub(replacement.from_, replacement.to, text)
+
+    return reduce(inner, replacements, text)
+
+
+def _process_file_names(root: Path, replacements: Iterable[_Replacement], /) -> None:
+    replacements = list(replacements)
+    _LOGGER.info(
+        "Processing file names: %s (%s)", root, _desc_replacements(replacements)
+    )
+    for path in list(_yield_paths(root)):
+        old_stem = path.stem
+        new_stem = _apply_replacements(old_stem, replacements)
+        new_path = path.with_stem(new_stem)
+        if path != new_path:
+            _LOGGER.info("Renaming %s -> %s...", path, new_path)
+            _ = path.rename(new_path)
 
 
 if __name__ == "__main__":
