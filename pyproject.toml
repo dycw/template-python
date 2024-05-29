@@ -50,6 +50,10 @@ packages = ["src/dycw_template"]
 [tool.hatch.version]
 path = "src/dycw_template/__init__.py"
 
+# isort
+[tool.isort]
+float_to_top = true
+
 # nitpick
 [tool.nitpick]
 style = [
