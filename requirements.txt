@@ -16,7 +16,7 @@ coverage==7.5.3
     # via pytest-cov
 distlib==0.3.8
     # via virtualenv
-dycw-utilities==0.27.21
+dycw-utilities==0.27.22
     # via dycw-template (pyproject.toml)
 exceptiongroup==1.2.1
     # via dycw-utilities
