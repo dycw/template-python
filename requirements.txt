@@ -12,7 +12,7 @@ click==8.1.7
     # via
     #   hatch
     #   userpath
-coverage==7.5.3
+coverage==7.5.4
     # via pytest-cov
 distlib==0.3.8
     # via virtualenv
@@ -22,13 +22,13 @@ exceptiongroup==1.2.1
     # via dycw-utilities
 execnet==2.1.1
     # via pytest-xdist
-filelock==3.15.3
+filelock==3.15.4
     # via virtualenv
 h11==0.14.0
     # via httpcore
 hatch==1.12.0
     # via dycw-template (pyproject.toml)
-hatchling==1.24.2
+hatchling==1.25.0
     # via hatch
 httpcore==1.0.5
     # via httpx
