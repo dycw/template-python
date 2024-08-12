@@ -21,6 +21,23 @@ dev = [
   "pytest-cov >= 5.0.0, < 5.1",
 ]
 
+# basedpyright
+[tool.basedpyright]
+exclude = ["alembic/versions"]
+ignore = ["alembic/versions"]
+include = ["src"]
+pythonVersion = "3.12"
+reportAny = false
+reportMissingTypeArgument = false
+reportMissingTypeStubs = false
+reportPrivateUsage = false
+reportUnknownArgumentType = false
+reportUnknownMemberType = false
+reportUnknownParameterType = false
+reportUnknownVariableType = false
+reportUnusedImport = false
+reportUnusedVariable = false
+
 # coverage
 [tool.coverage]
 
@@ -57,30 +74,6 @@ style = [
   "https://raw.githubusercontent.com/dycw/nitpick/master/styles/common.toml",
 ]
 
-# pyright
-[tool.pyright]
-executionEnvironments = [{root = "src"}]
-include = ["src"]
-pythonVersion = "3.12"
-reportImplicitOverride = "error"
-reportImportCycles = "error"
-reportMissingSuperCall = "error"
-reportMissingTypeArgument = false
-reportMissingTypeStubs = false
-reportPrivateImportUsage = false
-reportPrivateUsage = false
-reportPropertyTypeMismatch = "error"
-reportShadowedImports = "error"
-reportUninitializedInstanceVariable = "error"
-reportUnknownArgumentType = false
-reportUnknownMemberType = false
-reportUnknownParameterType = false
-reportUnknownVariableType = false
-reportUnnecessaryTypeIgnoreComment = "error"
-reportUntypedBaseClass = false
-reportUnusedCallResult = "error"
-typeCheckingMode = "strict"
-
 # pytest
 [tool.pytest]
 
@@ -105,12 +98,18 @@ src = ["src"]
 target-version = "py312"
 unsafe-fixes = true
 
+[tool.ruff.format]
+preview = true
+
 [tool.ruff.lint]
+explicit-preview-rules = true
 fixable = ["ALL"]
 ignore = [
   "ANN101",  # missing-type-self
   "ANN102",  # missing-type-cls
-  "ANN401",  # dynamically-typed-expression
+  "ANN401",  # any-type
+  "C901",  # complex-structure
+  "CPY001",  # missing-copyright-notice
   "D100",  # undocumented-public-module
   "D101",  # undocumented-public-class
   "D102",  # undocumented-public-method
@@ -122,18 +121,20 @@ ignore = [
   "D203",  # one-blank-line-before-class
   "D213",  # multi-line-summary-second-line
   "E501",  # line-too-long
-  "F403",  # undefined-local-with-import-star
-  "F405",  # undefined-local-with-import-star-usage
   "PD901",  # pandas-df-variable-name
-  "PLE1142",  # await-outside-async
+  "PERF203",  # try-except-in-loop
+  "PLR0904",  # too-many-public-methods
   "PLR0911",  # too-many-return-statements
+  "PLR0912",  # too-many-branches
   "PLR0913",  # too-many-arguments
   "PLR0915",  # too-many-statements
   "PLR2004",  # magic-value-comparison
   "PT013",  # pytest-incorrect-pytest-import
-  "S101",  # assert-used
+  "S311",  # suspicious-non-cryptographic-random-usage
   "S603",  # subprocess-without-shell-equals-true
   "S607",  # start-process-with-partial-path
+  # preview
+  "S101",  # assert
   # formatter
   "W191",  # tab-indentation
   "E111",  # indentation-with-invalid-multiple
@@ -150,18 +151,12 @@ ignore = [
   "ISC001",  # single-line-implicit-string-concatenation
   "ISC002",  # multi-line-implicit-string-concatenation
 ]
-select = ["ALL"]
-unfixable = [
-  "B007",  # unused-loop-control-variable
-  "F541",  # f-string-missing-placeholders
-  "F601",  # multi-value-repeated-key-literal
-  "PIE794",  # duplicate-class-field-definition
-  "PLR5501",  # collapsible-else-if
-  "RET504",  # unnecessary-assign
-  "SIM102",  # collapsible-if
-  "SIM105",  # suppressible-exception
-  "SIM114",  # if-with-same-arms
-  "T201",  # print
+preview = true
+select = [
+  "ALL",
+  # preview
+  "RUF022",  # unsorted-dunder-all
+  "RUF029",  # unused-async
 ]
 
 [tool.ruff.lint.extend-per-file-ignores]
@@ -171,3 +166,6 @@ unfixable = [
 
 [tool.ruff.lint.flake8-tidy-imports]
 ban-relative-imports = "all"
+
+[tool.ruff.lint.isort]
+required-imports = ["from __future__ import annotations"]
