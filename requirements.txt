@@ -16,7 +16,7 @@ coverage==7.6.1
     # via pytest-cov
 distlib==0.3.8
     # via virtualenv
-dycw-utilities==0.40.8
+dycw-utilities==0.40.9
     # via dycw-template (pyproject.toml)
 execnet==2.1.1
     # via pytest-xdist

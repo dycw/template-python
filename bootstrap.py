@@ -1,14 +1,18 @@
 #!/usr/bin/env python3
+from __future__ import annotations
 
-from collections.abc import Iterable, Iterator
 from dataclasses import dataclass
 from functools import reduce
 from itertools import chain
 from logging import getLogger
-from pathlib import Path
+from typing import TYPE_CHECKING
 
 from utilities.git import get_repo_name, get_repo_root
 from utilities.logging import basic_config
+
+if TYPE_CHECKING:
+    from collections.abc import Iterable, Iterator
+    from pathlib import Path
 
 basic_config()
 _LOGGER = getLogger()
