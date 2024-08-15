@@ -4,6 +4,8 @@ anyio==4.4.0
     # via httpx
 attrs==24.2.0
     # via hypothesis
+basedpyright==1.16.0
+    # via dycw-template (pyproject.toml)
 certifi==2024.7.4
     # via
     #   httpcore
@@ -16,7 +18,7 @@ coverage==7.6.1
     # via pytest-cov
 distlib==0.3.8
     # via virtualenv
-dycw-utilities==0.40.9
+dycw-utilities==0.40.12
     # via dycw-template (pyproject.toml)
 execnet==2.1.1
     # via pytest-xdist
@@ -59,6 +61,8 @@ more-itertools==10.4.0
     # via
     #   jaraco-classes
     #   jaraco-functools
+nodejs-wheel-binaries==20.16.0
+    # via basedpyright
 packaging==24.1
     # via
     #   hatch
@@ -108,7 +112,7 @@ sortedcontainers==2.4.0
     # via hypothesis
 tomli-w==1.0.0
     # via hatch
-tomlkit==0.13.0
+tomlkit==0.13.2
     # via hatch
 trove-classifiers==2024.7.2
     # via hatchling
@@ -116,7 +120,7 @@ typing-extensions==4.12.2
     # via dycw-utilities
 userpath==1.9.2
     # via hatch
-uv==0.2.35
+uv==0.2.36
     # via hatch
 virtualenv==20.26.3
     # via hatch

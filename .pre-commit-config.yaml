@@ -8,7 +8,7 @@ repos:
       - id: ruff-format
         types_or: [python, pyi, jupyter]
   - repo: https://github.com/dycw/pre-commit-hooks
-    rev: 0.9.16
+    rev: 0.9.17
     hooks:
       # - id: run-hatch-version
       - id: run-ruff-format
@@ -19,6 +19,10 @@ repos:
     hooks:
       - id: pretty-format-toml
         args: [--autofix, --trailing-commas]
+  - repo: https://github.com/pamoller/xmlformatter
+    rev: v0.2.6
+    hooks:
+      - id: xml-formatter
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.6.0
     hooks:
