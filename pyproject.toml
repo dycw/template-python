@@ -17,7 +17,7 @@ requires-python = ">= 3.12"
 [project.optional-dependencies]
 dev = [
   "basedpyright >= 1.16.0, < 1.17",
-  "dycw-utilities[test] >= 0.40.15, < 0.41",
+  "dycw-utilities[test] >= 0.40.19, < 0.41",
   "hatch >= 1.12.0, < 1.13",
   "pytest-cov >= 5.0.0, < 5.1",
 ]
@@ -120,7 +120,7 @@ ignore = [
   "D203",  # one-blank-line-before-class
   "D213",  # multi-line-summary-second-line
   "E501",  # line-too-long
-  "PD901",  # pandas-df-variable-name
+  "PD",  # pandas-vet
   "PERF203",  # try-except-in-loop
   "PLR0904",  # too-many-public-methods
   "PLR0911",  # too-many-return-statements
