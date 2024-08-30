@@ -6,7 +6,7 @@ attrs==24.2.0
     # via hypothesis
 basedpyright==1.16.0
     # via dycw-template (pyproject.toml)
-certifi==2024.7.4
+certifi==2024.8.30
     # via
     #   httpcore
     #   httpx
@@ -32,13 +32,13 @@ hatchling==1.25.0
     # via hatch
 httpcore==1.0.5
     # via httpx
-httpx==0.27.0
+httpx==0.27.2
     # via hatch
 hyperlink==21.0.0
     # via hatch
-hypothesis==6.111.1
+hypothesis==6.111.2
     # via dycw-utilities
-idna==3.7
+idna==3.8
     # via
     #   anyio
     #   httpx
@@ -47,7 +47,7 @@ iniconfig==2.0.0
     # via pytest
 jaraco-classes==3.4.0
     # via keyring
-jaraco-context==5.3.0
+jaraco-context==6.0.1
     # via keyring
 jaraco-functools==4.0.2
     # via keyring
@@ -61,7 +61,7 @@ more-itertools==10.4.0
     # via
     #   jaraco-classes
     #   jaraco-functools
-nodejs-wheel-binaries==20.16.0
+nodejs-wheel-binaries==20.17.0
     # via basedpyright
 packaging==24.1
     # via
@@ -100,7 +100,7 @@ pytest-rerunfailures==14.0
     # via dycw-utilities
 pytest-xdist==3.6.1
     # via dycw-utilities
-rich==13.7.1
+rich==13.8.0
     # via hatch
 shellingham==1.5.4
     # via hatch
@@ -120,7 +120,7 @@ typing-extensions==4.12.2
     # via dycw-utilities
 userpath==1.9.2
     # via hatch
-uv==0.2.37
+uv==0.4.0
     # via hatch
 virtualenv==20.26.3
     # via hatch
