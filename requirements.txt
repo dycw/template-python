@@ -118,6 +118,8 @@ trove-classifiers==2024.7.2
     # via hatchling
 typing-extensions==4.12.2
     # via dycw-utilities
+tzdata==2024.1
+    # via dycw-template (pyproject.toml)
 userpath==1.9.2
     # via hatch
 uv==0.4.0
