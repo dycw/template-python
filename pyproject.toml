@@ -8,7 +8,7 @@ requires = ["hatchling"]
 # project
 [project]
 authors = [{name = "Derek Wan", email = "d.wan@icloud.com"}]
-dependencies = ['dycw-utilities', 'tzdata']
+dependencies = ['dycw-utilities', 'tzdata', 'whenever']
 dynamic = ["version"]
 name = "dycw-template"
 readme = "README.md"
