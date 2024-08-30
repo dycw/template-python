@@ -18,4 +18,5 @@ def test_main() -> None:
             use = "Etc/UTC"
         case _:
             use = "UTC"
-    _ = ZonedDateTime.from_py_datetime(datetime2).to_tz(use)
+    zdt = ZonedDateTime.from_py_datetime(datetime2)
+    zdt.to_tz(use)
