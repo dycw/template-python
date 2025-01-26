@@ -19,6 +19,7 @@ dev = [
   "dycw-utilities[test] >= 0.92.10, < 0.93",
   "hatch >= 1.14.0, < 1.15",
   "pytest-cov >= 6.0.0, < 6.1",
+  "setuptools",  # for pkg-resources, for pytest-only
 ]
 
 # coverage
