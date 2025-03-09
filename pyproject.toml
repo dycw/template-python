@@ -1,9 +1,9 @@
 #
 
-# build-system
-[build-system]
-build-backend = "hatchling.build"
-requires = ["hatchling"]
+[dependency-groups]
+dev = [
+  "bump2version>=1.0.1",
+]
 
 # project
 [project]
