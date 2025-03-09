@@ -84,6 +84,8 @@ dev = [
 [package.dev-dependencies]
 dev = [
     { name = "bump2version" },
+    { name = "dycw-utilities", extra = ["test"] },
+    { name = "setuptools" },
 ]
 test = [
     { name = "dycw-utilities", extra = ["test"] },
@@ -98,10 +100,14 @@ requires-dist = [
 ]
 
 [package.metadata.requires-dev]
-dev = [{ name = "bump2version", specifier = ">=1.0.1" }]
+dev = [
+    { name = "bump2version", specifier = ">=1.0.1,<1.1" },
+    { name = "dycw-utilities", extras = ["test"], specifier = ">=0.92.22,<0.93" },
+    { name = "setuptools", specifier = ">=75.8.2,<75.9" },
+]
 test = [
-    { name = "dycw-utilities", extras = ["test"], specifier = ">=0.92.22" },
-    { name = "setuptools", specifier = ">=75.8.2" },
+    { name = "dycw-utilities", extras = ["test"], specifier = ">=0.92.22,<0.93" },
+    { name = "setuptools", specifier = ">=75.8.2,<75.9" },
 ]
 
 [[package]]
