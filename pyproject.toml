@@ -12,12 +12,11 @@ dependencies = []
 dynamic = ["version"]
 name = "dycw-template"
 readme = "README.md"
-requires-python = ">= 3.12"
+requires-python = ">= 3.13"
 
 [project.optional-dependencies]
 dev = [
   "dycw-utilities[test] >= 0.92.10, < 0.93",
-  "hatch >= 1.14.0, < 1.15",
   "pytest-cov >= 6.0.0, < 6.1",
   "setuptools >= 75.8.0, < 75.9",  # https://github.com/theY4Kman/pytest-only/issues/14
 ]
@@ -39,29 +38,17 @@ branch = true
 data_file = ".coverage/data"
 parallel = true
 
-# hatch
-[tool.hatch]
-
-[tool.hatch.build]
-sources = ["src"]
-
-[tool.hatch.build.targets.wheel]
-packages = ["src/dycw_template"]
-
-[tool.hatch.version]
-path = "src/dycw_template/__init__.py"
-
 # nitpick
 [tool.nitpick]
 style = [
-  "https://raw.githubusercontent.com/dycw/nitpick/master/styles/3.12.toml",
+  "https://raw.githubusercontent.com/dycw/nitpick/master/styles/3.13.toml",
   "https://raw.githubusercontent.com/dycw/nitpick/master/styles/common.toml",
 ]
 
 [tool.pyright]
 deprecateTypingAliases = true
 enableReachabilityAnalysis = false
-pythonVersion = "3.12"
+pythonVersion = "3.13"
 reportAny = false
 reportCallInDefaultInitializer = true
 reportImplicitOverride = true
