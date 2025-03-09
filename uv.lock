@@ -85,6 +85,10 @@ dev = [
 dev = [
     { name = "bump2version" },
 ]
+test = [
+    { name = "dycw-utilities", extra = ["test"] },
+    { name = "setuptools" },
+]
 
 [package.metadata]
 requires-dist = [
@@ -95,6 +99,10 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 dev = [{ name = "bump2version", specifier = ">=1.0.1" }]
+test = [
+    { name = "dycw-utilities", extras = ["test"], specifier = ">=0.92.22" },
+    { name = "setuptools", specifier = ">=75.8.2" },
+]
 
 [[package]]
 name = "dycw-utilities"
