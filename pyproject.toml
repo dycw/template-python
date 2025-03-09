@@ -1,27 +1,29 @@
 #
 
+# build-system
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+# dependency groups
 [dependency-groups]
 dev = [
-  "bump2version>=1.0.1,<1.1",
-  "dycw-utilities[test]>=0.92.22,<0.93",
-  "setuptools >= 75.8.2, < 75.9",  # https://github.com/theY4Kman/pytest-only/issues/14
+  "dycw-utilities[test]",
+  "setuptools",
 ]
 
 # project
 [project]
 authors = [{name = "Derek Wan", email = "d.wan@icloud.com"}]
 dependencies = []
-dynamic = ["version"]
 name = "dycw-template"
 readme = "README.md"
 requires-python = ">= 3.13"
+version = "0.1.0"
 
-[project.optional-dependencies]
-dev = [
-  "dycw-utilities[test] >= 0.92.10, < 0.93",
-  "pytest-cov >= 6.0.0, < 6.1",
-  "setuptools >= 75.8.0, < 75.9",  # https://github.com/theY4Kman/pytest-only/issues/14
-]
+# bump-my-version
+[tool.bumpversion]
+current_version = "0.1.0"
 
 # coverage
 [tool.coverage]
@@ -40,6 +42,15 @@ branch = true
 data_file = ".coverage/data"
 parallel = true
 
+# hatch
+[tool.hatch]
+
+[tool.hatch.build]
+sources = ["src"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dycw_template"]
+
 # nitpick
 [tool.nitpick]
 style = [
@@ -47,6 +58,7 @@ style = [
   "https://raw.githubusercontent.com/dycw/nitpick/master/styles/common.toml",
 ]
 
+# pyright
 [tool.pyright]
 deprecateTypingAliases = true
 enableReachabilityAnalysis = false
@@ -94,7 +106,7 @@ xfail_strict = true
 # ruff
 [tool.ruff]
 src = ["src"]
-target-version = "py312"
+target-version = "py313"
 unsafe-fixes = true
 
 [tool.ruff.format]
