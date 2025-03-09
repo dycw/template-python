@@ -9,7 +9,6 @@ requires = ["hatchling"]
 [dependency-groups]
 dev = [
   "dycw-utilities[test]",
-  "setuptools",
 ]
 
 # project
@@ -23,6 +22,7 @@ version = "0.1.0"
 
 # bump-my-version
 [tool.bumpversion]
+allow_dirty = true
 current_version = "0.1.0"
 
 [[tool.bumpversion.files]]
@@ -50,8 +50,8 @@ parallel = true
 # hatch
 [tool.hatch]
 
-[tool.hatch.build]
-sources = ["src"]
+[tool.hatch.build.targets.sdist]
+include = ["src"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/dycw_template"]

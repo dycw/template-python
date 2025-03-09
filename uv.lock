@@ -50,19 +50,6 @@ wheels = [
 ]
 
 [[package]]
-name = "coverage-conditional-plugin"
-version = "0.9.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "coverage" },
-    { name = "packaging" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/2e/6e/82f411d325a38cc24289060ca5f80d990ee8d026f4de9782006acf061f9b/coverage_conditional_plugin-0.9.0.tar.gz", hash = "sha256:6893dab0542695dbd5ea714281dae0dfec8d0e36480ba32d839e9fa7344f8215", size = 10579 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/06/83/df10dd1911cb1695274da836e786ade7eaace9ed625b14056eb0bd6117d8/coverage_conditional_plugin-0.9.0-py3-none-any.whl", hash = "sha256:1b37bc469019d2ab5b01f5eee453abe1846b3431e64e209720c2a9ec4afb8130", size = 7317 },
-]
-
-[[package]]
 name = "dycw-template"
 version = "0.1.0"
 source = { editable = "." }
@@ -70,43 +57,41 @@ source = { editable = "." }
 [package.dev-dependencies]
 dev = [
     { name = "dycw-utilities", extra = ["test"] },
-    { name = "setuptools" },
 ]
 
 [package.metadata]
 
 [package.metadata.requires-dev]
-dev = [
-    { name = "dycw-utilities", extras = ["test"] },
-    { name = "setuptools" },
-]
+dev = [{ name = "dycw-utilities", extras = ["test"] }]
 
 [[package]]
 name = "dycw-utilities"
-version = "0.97.1"
+version = "0.97.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/64/24/babf1f5ae16beaa06703957f0171453c49c1637c780c2ff195126a325db0/dycw_utilities-0.97.1.tar.gz", hash = "sha256:1936867c435fa67db7bc0d48a67e991fe5257319e5bf62d348dc7c3d1f95d49c", size = 389326 }
+sdist = { url = "https://files.pythonhosted.org/packages/0c/50/4bf3f9999b06537da2cac682182512c582ad7de7b41cdf9930ab9fe7cb8e/dycw_utilities-0.97.2.tar.gz", hash = "sha256:aa6fa4b9e43f6f9fcefae6c77f2af92e3841878f9cb2424df78b6d81973f79ef", size = 233050 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ce/d6/5a8e89053bb47bfbce41815ea60f534aa74b84e07c4c3dbe4fa1ba72b1c1/dycw_utilities-0.97.1-py3-none-any.whl", hash = "sha256:5147cb057c7db52a44e6ad900a8a96548d27ff3061f9c6876dfdfbd19f784400", size = 3808 },
+    { url = "https://files.pythonhosted.org/packages/dc/cb/389dee94e64cf76b281c61fad60e3f837dd9e290ecbab4423bbcd88d67f7/dycw_utilities-0.97.2-py3-none-any.whl", hash = "sha256:ddb590b04b322a7ef60b71fb72978f412e3fe1bd7c14c88581e69df5ac7ffb4b", size = 151960 },
 ]
 
 [package.optional-dependencies]
 test = [
-    { name = "coverage-conditional-plugin" },
     { name = "hypothesis" },
     { name = "pytest" },
     { name = "pytest-asyncio" },
     { name = "pytest-cov" },
     { name = "pytest-instafail" },
+    { name = "pytest-lazy-fixtures" },
     { name = "pytest-only" },
     { name = "pytest-randomly" },
     { name = "pytest-regressions" },
     { name = "pytest-rerunfailures" },
     { name = "pytest-rng" },
+    { name = "pytest-timeout" },
     { name = "pytest-xdist" },
+    { name = "setuptools" },
 ]
 
 [[package]]
@@ -251,6 +236,18 @@ wheels = [
 ]
 
 [[package]]
+name = "pytest-lazy-fixtures"
+version = "1.1.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pytest" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/11/b9/81537997a5f887f8b9a379df0925ca53d7718bcbb7d1c754bd9699499ec4/pytest_lazy_fixtures-1.1.2.tar.gz", hash = "sha256:14ba4154dab52066c1c4d6547cc40bbf60726445cb16f1d2dcc9485cdf38964d", size = 7231 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f8/c8/280dac9595059c3703f6c0aff7bfd7f0c6b39cdafd437bf3c37047193d6a/pytest_lazy_fixtures-1.1.2-py3-none-any.whl", hash = "sha256:e04c164d2caa5a6b9c846fa7559aad2ce0980a944daf4b75579f39920ae961e4", size = 7012 },
+]
+
+[[package]]
 name = "pytest-only"
 version = "2.1.2"
 source = { registry = "https://pypi.org/simple" }
@@ -315,6 +312,18 @@ wheels = [
 ]
 
 [[package]]
+name = "pytest-timeout"
+version = "2.3.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pytest" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/93/0d/04719abc7a4bdb3a7a1f968f24b0f5253d698c9cc94975330e9d3145befb/pytest-timeout-2.3.1.tar.gz", hash = "sha256:12397729125c6ecbdaca01035b9e5239d4db97352320af155b3f5de1ba5165d9", size = 17697 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/03/27/14af9ef8321f5edc7527e47def2a21d8118c6f329a9342cc61387a0c0599/pytest_timeout-2.3.1-py3-none-any.whl", hash = "sha256:68188cb703edfc6a18fad98dc25a3c61e9f24d644b0b70f33af545219fc7813e", size = 14148 },
+]
+
+[[package]]
 name = "pytest-xdist"
 version = "3.6.1"
 source = { registry = "https://pypi.org/simple" }
@@ -346,11 +355,11 @@ wheels = [
 
 [[package]]
 name = "setuptools"
-version = "75.9.1"
+version = "76.0.0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/d0/df/ec5ad16b0ec305081c372bd0550fd638fa96e472cd5a03049c344076ea76/setuptools-75.9.1.tar.gz", hash = "sha256:b6eca2c3070cdc82f71b4cb4bb2946bc0760a210d11362278cf1ff394e6ea32c", size = 1345088 }
+sdist = { url = "https://files.pythonhosted.org/packages/32/d2/7b171caf085ba0d40d8391f54e1c75a1cda9255f542becf84575cfd8a732/setuptools-76.0.0.tar.gz", hash = "sha256:43b4ee60e10b0d0ee98ad11918e114c70701bc6051662a9a675a0496c1a158f4", size = 1349387 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/8d/28/19ad82a0549d73ec6feffa6711eacf9246035a9426b8a8b528440c9959d2/setuptools-75.9.1-py3-none-any.whl", hash = "sha256:0a6f876d62f4d978ca1a11ab4daf728d1357731f978543ff18ecdbf9fd071f73", size = 1231632 },
+    { url = "https://files.pythonhosted.org/packages/37/66/d2d7e6ad554f3a7c7297c3f8ef6e22643ad3d35ef5c63bf488bc89f32f31/setuptools-76.0.0-py3-none-any.whl", hash = "sha256:199466a166ff664970d0ee145839f5582cb9bca7a0a3a2e795b6a9cb2308e9c6", size = 1236106 },
 ]
 
 [[package]]
