@@ -38,7 +38,9 @@ def main() -> None:
     ]
 
     pre_commit_replacements = [
-        _Replacement(from_="# - id: run-hatch-version", to="- id: run-hatch-version")
+        _Replacement(
+            from_="# - id: run-bump-my-version", to="- id: run-bump-my-version"
+        )
     ]
     replacements = list(chain(template_replacements, pre_commit_replacements))
     _process_file_contents(root, replacements)
