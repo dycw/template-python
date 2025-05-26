@@ -67,7 +67,7 @@ dev = [
 [package.metadata.requires-dev]
 dev = [
     { name = "dycw-utilities", extras = ["test"] },
-    { name = "pyright", extras = ["nodejs"], specifier = ">=1.1.401" },
+    { name = "pyright", extras = ["nodejs"] },
 ]
 
 [[package]]
