@@ -7,7 +7,7 @@ on:
 
 jobs:
   ruff:
-    name: lint
+    name: ruff
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
