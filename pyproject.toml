@@ -118,6 +118,7 @@ unsafe-fixes = true
 
 [tool.ruff.format]
 preview = true
+skip-magic-trailing-comma = true
 
 [tool.ruff.lint]
 explicit-preview-rules = true
@@ -186,3 +187,4 @@ ban-relative-imports = "all"
 
 [tool.ruff.lint.isort]
 required-imports = ["from __future__ import annotations"]
+split-on-trailing-comma = false
