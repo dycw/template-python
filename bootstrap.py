@@ -5,14 +5,18 @@ from dataclasses import dataclass
 from functools import reduce
 from itertools import chain
 from logging import getLogger
+from pathlib import Path
+from subprocess import PIPE, check_output
 from typing import TYPE_CHECKING
 
-from utilities.git import get_repo_name, get_repo_root
+from utilities.git import get_repo_root
 from utilities.logging import basic_config
+from utilities.pathlib import PWD
 
 if TYPE_CHECKING:
     from collections.abc import Iterable, Iterator
-    from pathlib import Path
+
+    from utilities.types import PathLike
 
 basic_config()
 _LOGGER = getLogger()
@@ -31,7 +35,7 @@ def main() -> None:
     template_dashed = "dycw-template"
     template_underscore = template_dashed.replace("-", "_")
 
-    name = get_repo_name()
+    name = _get_repo_name()
     template_replacements = [
         _Replacement(from_=template_dashed, to=name.replace("_", "-")),
         _Replacement(from_=template_underscore, to=name.replace("-", "_")),
@@ -46,6 +50,15 @@ def main() -> None:
     _process_file_contents(root, replacements)
 
     _process_file_names(root, template_replacements)
+
+
+def _get_repo_name(*, path: PathLike = PWD) -> str:
+    """Get the repo name."""
+    root = get_repo_root(path=path)
+    output = check_output(
+        ["git", "remote", "get-url", "origin"], stderr=PIPE, cwd=root, text=True
+    )
+    return Path(output.strip("\n")).stem
 
 
 def _process_file_contents(root: Path, replacements: Iterable[_Replacement], /) -> None:
