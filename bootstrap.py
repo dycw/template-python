@@ -9,9 +9,8 @@ from pathlib import Path
 from subprocess import PIPE, check_output
 from typing import TYPE_CHECKING
 
-from utilities.git import get_repo_root
 from utilities.logging import basic_config
-from utilities.pathlib import PWD
+from utilities.pathlib import PWD, get_repo_root
 
 if TYPE_CHECKING:
     from collections.abc import Iterable, Iterator
