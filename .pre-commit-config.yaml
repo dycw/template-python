@@ -12,7 +12,6 @@ repos:
       - id: format-requirements
       - id: replace-sequence-str
       - id: run-bump-my-version
-        args: [--mode=bumpversion]
   - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
     rev: v2.15.0
     hooks:
