@@ -10,6 +10,7 @@ requires = ["hatchling"]
 dev = [
   "dycw-utilities[test]",
   "pyright[nodejs]",
+  "rich",
 ]
 
 # project
@@ -19,12 +20,12 @@ dependencies = []
 name = "dycw-template"
 readme = "README.md"
 requires-python = ">= 3.13"
-version = "0.1.0"
+version = "0.1.1"
 
 # bump-my-version
 [tool.bumpversion]
 allow_dirty = true
-current_version = "0.1.0"
+current_version = "0.1.1"
 
 [[tool.bumpversion.files]]
 filename = "src/dycw_template/__init__.py"
