@@ -10,12 +10,11 @@ from subprocess import PIPE, check_output
 from typing import TYPE_CHECKING
 
 from utilities.logging import basic_config
-from utilities.pathlib import PWD, get_repo_root
+from utilities.pathlib import get_repo_root
 
 if TYPE_CHECKING:
     from collections.abc import Iterable, Iterator
 
-    from utilities.types import PathLike
 
 basic_config()
 _LOGGER = getLogger()
@@ -51,9 +50,9 @@ def main() -> None:
     _process_file_names(root, template_replacements)
 
 
-def _get_repo_name(*, path: PathLike = PWD) -> str:
+def _get_repo_name() -> str:
     """Get the repo name."""
-    root = get_repo_root(path=path)
+    root = get_repo_root()
     output = check_output(
         ["git", "remote", "get-url", "origin"], stderr=PIPE, cwd=root, text=True
     )
