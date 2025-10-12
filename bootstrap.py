@@ -4,20 +4,20 @@ from __future__ import annotations
 from dataclasses import dataclass
 from functools import reduce
 from itertools import chain
-from logging import getLogger
+from logging import basicConfig, getLogger
 from pathlib import Path
 from subprocess import PIPE, check_output
 from typing import TYPE_CHECKING
-
-from utilities.logging import basic_config
-from utilities.pathlib import get_repo_root
 
 if TYPE_CHECKING:
     from collections.abc import Iterable, Iterator
 
 
-basic_config()
+basicConfig(
+    format="{asctime} | {message}", datefmt="%Y-%m-%d %H:%M:%S", style="{", level="INFO"
+)
 _LOGGER = getLogger()
+_REPO_ROOT = Path(__file__).parent
 
 
 @dataclass(frozen=True, kw_only=True)
@@ -27,9 +27,6 @@ class _Replacement:
 
 
 def main() -> None:
-    root = get_repo_root()
-    _LOGGER.info(root)
-
     template_dashed = "dycw-template"
     template_underscore = template_dashed.replace("-", "_")
 
@@ -45,16 +42,15 @@ def main() -> None:
         )
     ]
     replacements = list(chain(template_replacements, pre_commit_replacements))
-    _process_file_contents(root, replacements)
+    _process_file_contents(_REPO_ROOT, replacements)
 
-    _process_file_names(root, template_replacements)
+    _process_file_names(_REPO_ROOT, template_replacements)
 
 
 def _get_repo_name() -> str:
     """Get the repo name."""
-    root = get_repo_root()
     output = check_output(
-        ["git", "remote", "get-url", "origin"], stderr=PIPE, cwd=root, text=True
+        ["git", "remote", "get-url", "origin"], stderr=PIPE, cwd=_REPO_ROOT, text=True
     )
     return Path(output.strip("\n")).stem
 
@@ -84,7 +80,7 @@ def _desc_replacements(replacements: Iterable[_Replacement], /) -> str:
 
 
 def _yield_paths(root: Path, /) -> Iterator[Path]:
-    skips = {root.joinpath(".direnv"), root.joinpath(".git")}
+    skips = {root.joinpath(".git"), root.joinpath(".venv")}
     for path in root.rglob("**/*"):
         if not any(path.is_relative_to(skip) for skip in skips):
             yield path
