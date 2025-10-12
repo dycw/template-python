@@ -31,13 +31,12 @@ jobs:
       - run: uv run pyright
 
   test:
-    name: test / ${{ matrix.os }} / ${{ matrix.version }}
+    name: test / ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         os: [windows-latest, macos-latest, ubuntu-latest]
-        version: ["3.13"]
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
@@ -46,7 +45,7 @@ jobs:
           version: latest
       - uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.version }}
+          python-version-file: .python-version
       - run: uv sync
       - run: uv run pytest --cov-report=term-missing:skip-covered -n=auto
     timeout-minutes: 60
