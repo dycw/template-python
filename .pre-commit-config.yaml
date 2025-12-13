@@ -1,13 +1,13 @@
 repos:
   # fixers
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.14.8
+    rev: v0.14.9
     hooks:
       - id: ruff-check
         args: [--fix]
       - id: ruff-format
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.9.16
+    rev: 0.9.17
     hooks:
       - id: uv-lock
         args: [--upgrade]
@@ -25,11 +25,11 @@ repos:
             reorder_keys=true,
           ]
   - repo: https://github.com/dycw/pre-commit-hooks
-    rev: 0.13.25
+    rev: 0.13.26
     hooks:
       - id: format-requirements
       - id: replace-sequence-str
-      # - id: run-bump-my-version
+      - id: run-bump-my-version
   - repo: https://github.com/scop/pre-commit-shfmt
     rev: v3.12.0-2
     hooks:
