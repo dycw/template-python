@@ -1,40 +1,29 @@
-#
-
-# build-system
 [build-system]
   build-backend = "uv_build"
   requires = ["uv_build"]
 
-# dependency groups
 [dependency-groups]
   dev = ["dycw-utilities[test]", "pyright[nodejs]", "rich"]
 
-# project
 [project]
   authors = [{ email = "d.wan@icloud.com", name = "Derek Wan" }]
   dependencies = []
   name = "dycw-template"
   readme = "README.md"
   requires-python = ">= 3.14"
-  version = "0.1.1"
+  version = "0.1.0"
 
-
-# tool
 [tool]
-
-  # bump-my-version
   [tool.bumpversion]
     allow_dirty = true
-    current_version = "0.1.1"
+    current_version = "0.1.0"
 
     [[tool.bumpversion.files]]
       filename = "src/dycw_template/__init__.py"
       replace = "__version__ = \"{new_version}\""
       search = "__version__ = \"{current_version}\""
 
-  # coverage
   [tool.coverage]
-
     [tool.coverage.html]
       directory = ".coverage/html"
 
@@ -49,14 +38,12 @@
       data_file = ".coverage/data"
       parallel = true
 
-  # nitpick
   [tool.nitpick]
     style = [
       "https://raw.githubusercontent.com/dycw/nitpick/master/styles/3.14.toml",
       "https://raw.githubusercontent.com/dycw/nitpick/master/styles/common.toml",
     ]
 
-  # pyright
   [tool.pyright]
     deprecateTypingAliases = true
     enableReachabilityAnalysis = false
@@ -83,7 +70,6 @@
     reportUnusedVariable = false
     typeCheckingMode = "strict"
 
-  # pytest
   [tool.pytest]
     addopts = [
       "-ra",
@@ -104,7 +90,6 @@
     timeout = "600"
     xfail_strict = true
 
-  # ruff
   [tool.ruff]
     src = ["src"]
     target-version = "py314"

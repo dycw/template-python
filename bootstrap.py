@@ -3,7 +3,6 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from functools import reduce
-from itertools import chain
 from logging import basicConfig, getLogger
 from pathlib import Path
 from subprocess import PIPE, check_output
@@ -27,24 +26,15 @@ class _Replacement:
 
 
 def main() -> None:
-    template_dashed = "dycw-template"
-    template_underscore = template_dashed.replace("-", "_")
-
+    dashed = "dycw-template"
+    underscore = dashed.replace("-", "_")
     name = _get_repo_name()
-    template_replacements = [
-        _Replacement(from_=template_dashed, to=name.replace("_", "-")),
-        _Replacement(from_=template_underscore, to=name.replace("-", "_")),
+    replacements = [
+        _Replacement(from_=dashed, to=name.replace("_", "-")),
+        _Replacement(from_=underscore, to=name.replace("-", "_")),
     ]
-
-    pre_commit_replacements = [
-        _Replacement(
-            from_="# - id: run-bump-my-version", to="- id: run-bump-my-version"
-        )
-    ]
-    replacements = list(chain(template_replacements, pre_commit_replacements))
     _process_file_contents(_REPO_ROOT, replacements)
-
-    _process_file_names(_REPO_ROOT, template_replacements)
+    _process_file_names(_REPO_ROOT, replacements)
 
 
 def _get_repo_name() -> str:
