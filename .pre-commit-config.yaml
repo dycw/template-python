@@ -8,6 +8,12 @@ repos:
     rev: v0.14.9
   - hooks:
       - args:
+          - --upgrade
+        id: uv-lock
+    repo: https://github.com/astral-sh/uv-pre-commit
+    rev: 0.9.17
+  - hooks:
+      - args:
           - --option
           - indent_tables=true
           - --option
@@ -65,11 +71,3 @@ repos:
           - markdown
           - yaml
     repo: local
-  - hooks:
-      - args:
-          - --script=script.py
-          - --upgrade
-        files: ^script\.py$
-        id: uv-lock
-    repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.9.17
