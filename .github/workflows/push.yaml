@@ -6,6 +6,14 @@ name: push
       - master
 
 jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Tag latest commit
+        uses: dycw/action-tag-commit@latest
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
   publish:
     environment:
       name: pypi
@@ -25,11 +33,3 @@ jobs:
         run: uv build
       - name: Upload distribution
         run: uv publish --trusted-publishing always
-
-  tag:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Tag latest commit
-        uses: dycw/action-tag-commit@latest
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
