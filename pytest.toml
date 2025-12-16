@@ -4,7 +4,7 @@
     "-vv",
     "--color=auto",
     "--cov=template",
-    "--cov-config=pyproject.toml",
+    "--cov-config=.coveragerc.toml",
     "--cov-report=html",
     "--durations=10",
     "--durations-min=10",

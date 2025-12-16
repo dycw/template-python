@@ -34,13 +34,13 @@ repos:
           - --pyproject
           - --pyproject--project--name=template
           - --pyright
-          - --pyright-include=src
+          - --pyright--include=src
           - --pytest
-          - --pytest-test-paths=src/tests
+          - --pytest--test-paths=src/tests
           - --ruff
         id: nitpick
     repo: https://github.com/dycw/pre-commit-hook-nitpick
-    rev: 0.2.10
+    rev: 0.3.2
   - hooks:
       - id: format-requirements
       - id: replace-sequence-str
