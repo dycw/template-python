@@ -25,7 +25,7 @@ repos:
     rev: v0.9.3
   - hooks:
       - args:
-          - --github--push-tag
+          - --github--push--tag
           - --pre-commit--prettier
           - --pre-commit--ruff
           - --pre-commit--taplo
@@ -33,13 +33,13 @@ repos:
           - --pyproject
           - --pyproject--project--name=template
           - --pyright
-          - --pyright-include=script.py
+          - --pyright-include=src
           - --pytest
-          - --pytest-test-paths=tests
+          - --pytest-test-paths=src/tests
           - --ruff
         id: nitpick
     repo: https://github.com/dycw/pre-commit-hook-nitpick
-    rev: 0.2.5
+    rev: 0.2.10
   - hooks:
       - id: format-requirements
       - id: replace-sequence-str
