@@ -37,9 +37,9 @@ repos:
           - --pyright--include=src
           - --pytest
           - --pytest--test-paths=src/tests
-          - --python-package-name=template
+          - --python-package-name=template_python
           - --readme
-          - --repo-name=template
+          - --repo-name=template-python
           - --ruff
         id: nitpick
     repo: https://github.com/dycw/pre-commit-hook-nitpick
