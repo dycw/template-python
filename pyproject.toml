@@ -8,7 +8,11 @@
 [project]
   authors = [{ email = "d.wan@icloud.com", name = "Derek Wan" }]
   dependencies = []
-  name = "template"
+  name = "dycw-template"
   readme = "README.md"
   requires-python = ">= 3.14"
   version = "0.1.0"
+
+[tool.uv.build-backend]
+  module-name = "template"
+  module-root = "src"

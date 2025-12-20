@@ -5,13 +5,13 @@ repos:
         id: ruff-check
       - id: ruff-format
     repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.14.9
+    rev: v0.14.10
   - hooks:
       - args:
           - --upgrade
         id: uv-lock
     repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.9.17
+    rev: 0.9.18
   - hooks:
       - args:
           - --option
@@ -27,20 +27,23 @@ repos:
       - args:
           - --coverage
           - --github--push--tag
+          - --package-name=dycw-template
           - --pre-commit--prettier
           - --pre-commit--ruff
           - --pre-commit--taplo
           - --pre-commit--uv
           - --pyproject
-          - --pyproject--project--name=template
           - --pyright
           - --pyright--include=src
           - --pytest
           - --pytest--test-paths=src/tests
+          - --python-package-name=template
+          - --readme
+          - --repo-name=template
           - --ruff
         id: nitpick
     repo: https://github.com/dycw/pre-commit-hook-nitpick
-    rev: 0.3.2
+    rev: 0.4.8
   - hooks:
       - id: format-requirements
       - id: replace-sequence-str
