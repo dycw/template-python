@@ -8,6 +8,7 @@
 [project]
   authors = [{ email = "d.wan@icloud.com", name = "Derek Wan" }]
   dependencies = []
+  description = "Template for Python packages"
   name = "dycw-template"
   readme = "README.md"
   requires-python = ">= 3.14"

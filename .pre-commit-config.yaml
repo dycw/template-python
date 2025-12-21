@@ -26,6 +26,7 @@ repos:
   - hooks:
       - args:
           - --coverage
+          - --description=Template for Python packages
           - --github--push--tag
           - --package-name=dycw-template
           - --pre-commit--prettier
