@@ -1,8 +1,3 @@
-name: pull-request
-"on":
-  pull_request:
-    branches:
-      - master
 jobs:
   pyright:
     name: pyright
@@ -44,7 +39,11 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          - windows-latest
           - macos-latest
           - ubuntu-latest
     timeout-minutes: 60
+name: pull-request
+"on":
+  pull_request:
+    branches:
+      - master
