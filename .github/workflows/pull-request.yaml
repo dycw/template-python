@@ -1,5 +1,5 @@
 name: pull-request
-true:
+"on":
   pull_request:
     branches:
       - master
