@@ -34,7 +34,7 @@ jobs:
         with:
           python-version-file: .python-version
       - run: uv sync
-      - run: uv run pytest --cov-report=term-missing:skip-covered -n=auto
+      - run: uv run pytest -n=auto
     strategy:
       fail-fast: false
       matrix:
