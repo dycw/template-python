@@ -129,7 +129,7 @@ dev = [
 
 [[package]]
 name = "dycw-utilities"
-version = "0.172.5"
+version = "0.172.7"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "atomicwrites" },
@@ -137,9 +137,9 @@ dependencies = [
     { name = "tzlocal" },
     { name = "whenever" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/f5/2a/661e344447d287091758f4d1cd37f0d0c9e3cea7c772c3c58fc5efc69b25/dycw_utilities-0.172.5.tar.gz", hash = "sha256:792df14d9066e094424db260f899f950b22a4e2283423c9c1f11260b006c80b5", size = 162818, upload-time = "2025-12-22T01:46:04.825Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/1e/48/c424a073fa819d339be60079106595be154faf82efed573ce2e9f58b24ab/dycw_utilities-0.172.7.tar.gz", hash = "sha256:4897e15357372701af215b99e79c081909ec1bae3cf788d4ffd60e2a8e581f6e", size = 163169, upload-time = "2025-12-24T01:03:16.861Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/a7/98/401e61e9dab2530dbe44e638ee59b4a15b553d0496b0fc45f40e09bef872/dycw_utilities-0.172.5-py3-none-any.whl", hash = "sha256:77e4dec4a1a278e119799ad320d803eda2c8e039fcd499fc471097e6766303c4", size = 196912, upload-time = "2025-12-22T01:46:06.536Z" },
+    { url = "https://files.pythonhosted.org/packages/af/85/fcbfdc9faff63b1752bb1997ec0ce8d3dd63994e82595c48ebb68dc93f0b/dycw_utilities-0.172.7-py3-none-any.whl", hash = "sha256:f61c661bf291563c9f28a924ceac72fdefb06417931e928c1b445dbe47504f5b", size = 197273, upload-time = "2025-12-24T01:03:15.256Z" },
 ]
 
 [package.optional-dependencies]
@@ -279,7 +279,7 @@ wheels = [
 
 [[package]]
 name = "nbclient"
-version = "0.10.3"
+version = "0.10.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "jupyter-client" },
@@ -287,9 +287,9 @@ dependencies = [
     { name = "nbformat" },
     { name = "traitlets" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/8d/f3/1f6cf2ede4b026bc5f0b424cb41adf22f9c804e90a4dbd4fdb42291a35d5/nbclient-0.10.3.tar.gz", hash = "sha256:0baf171ee246e3bb2391da0635e719f27dc77d99aef59e0b04dcb935ee04c575", size = 62564, upload-time = "2025-12-19T15:50:09.331Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/56/91/1c1d5a4b9a9ebba2b4e32b8c852c2975c872aec1fe42ab5e516b2cecd193/nbclient-0.10.4.tar.gz", hash = "sha256:1e54091b16e6da39e297b0ece3e10f6f29f4ac4e8ee515d29f8a7099bd6553c9", size = 62554, upload-time = "2025-12-23T07:45:46.369Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b2/77/0c73678f5260501a271fd7342bee5d639440f2e9e07d590f1100a056d87c/nbclient-0.10.3-py3-none-any.whl", hash = "sha256:39e9bd403504dd2484dd0fd25235bb6a683ce8cd9873356e40d880696adc9e35", size = 25473, upload-time = "2025-12-19T15:50:07.671Z" },
+    { url = "https://files.pythonhosted.org/packages/83/a0/5b0c2f11142ed1dddec842457d3f65eaf71a0080894eb6f018755b319c3a/nbclient-0.10.4-py3-none-any.whl", hash = "sha256:9162df5a7373d70d606527300a95a975a47c137776cd942e52d9c7e29ff83440", size = 25465, upload-time = "2025-12-23T07:45:44.51Z" },
 ]
 
 [[package]]
