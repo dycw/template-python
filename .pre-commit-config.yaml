@@ -1,6 +1,6 @@
 repos:
-  - repo: https://github.com/dycw/pre-commit-hook-nitpick
-    rev: 0.9.0
+  - repo: https://github.com/dycw/conformalize
+    rev: 0.10.0
     hooks:
       - args:
           - --description=Template for Python packages
@@ -23,7 +23,7 @@ repos:
           - --readme
           - --repo-name=template-python
           - --ruff
-        id: nitpick
+        id: conformalize
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
