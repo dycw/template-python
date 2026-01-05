@@ -113,6 +113,9 @@ wheels = [
 name = "dycw-template-python"
 version = "0.1.0"
 source = { editable = "." }
+dependencies = [
+    { name = "dycw-utilities" },
+]
 
 [package.dev-dependencies]
 dev = [
@@ -122,6 +125,7 @@ dev = [
 ]
 
 [package.metadata]
+requires-dist = [{ name = "dycw-utilities", specifier = ">=0.176.1,<1" }]
 
 [package.metadata.requires-dev]
 dev = [
