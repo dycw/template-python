@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/dycw/conformalize
-    rev: 0.12.0
+    rev: 0.13.6
     hooks:
       - args:
           - --description=Template for Python packages
@@ -8,11 +8,11 @@ repos:
           - --envrc--uv
           - --github--pull-request--pre-commit
           - --github--pull-request--pyright
-          - --github--pull-request--pytest--os--macos
-          - --github--pull-request--pytest--os--ubuntu
-          - --github--pull-request--pytest--resolution--highest
+          - --github--pull-request--pytest--macos
+          - --github--pull-request--pytest--ubuntu
           - --github--pull-request--ruff
           - --github--push--tag
+          - --gitignore
           - --package-name=dycw-template-python
           - --pre-commit--dycw
           - --pre-commit--prettier
@@ -44,7 +44,7 @@ repos:
           - --autofix
       - id: trailing-whitespace
   - repo: https://github.com/dycw/actions
-    rev: 0.3.31
+    rev: 0.3.40
     hooks:
       - id: format-requirements
       - id: replace-sequence-strs
