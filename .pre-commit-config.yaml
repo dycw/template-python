@@ -1,8 +1,9 @@
 repos:
-  - repo: https://github.com/dycw/conformalize
-    rev: 0.13.6
+  - repo: https://github.com/dycw/actions
+    rev: 0.6.3
     hooks:
-      - args:
+      - id: conformalize-repo
+        args:
           - --description=Template for Python packages
           - --envrc
           - --envrc--uv
@@ -14,8 +15,8 @@ repos:
           - --github--push--tag
           - --gitignore
           - --package-name=dycw-template-python
-          - --pre-commit--dycw
           - --pre-commit--prettier
+          - --pre-commit--python
           - --pre-commit--ruff
           - --pre-commit--taplo
           - --pre-commit--uv
@@ -25,7 +26,8 @@ repos:
           - --readme
           - --repo-name=template-python
           - --ruff
-        id: conformalize
+      - id: format-requirements
+      - id: replace-sequence-strs
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
@@ -43,11 +45,6 @@ repos:
         args:
           - --autofix
       - id: trailing-whitespace
-  - repo: https://github.com/dycw/actions
-    rev: 0.3.40
-    hooks:
-      - id: format-requirements
-      - id: replace-sequence-strs
   - repo: local
     hooks:
       - id: prettier
@@ -76,7 +73,7 @@ repos:
           - --option
           - reorder_keys=true
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.9.21
+    rev: 0.9.22
     hooks:
       - id: uv-lock
         args:
