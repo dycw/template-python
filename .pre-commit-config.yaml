@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/dycw/actions
-    rev: 0.10.3
+    rev: 0.10.10
     hooks:
       - id: conformalize-repo
         args:
@@ -19,6 +19,7 @@ repos:
           - --pre-commit--prettier
           - --pre-commit--python
           - --pre-commit--ruff
+          - --pre-commit--shell
           - --pre-commit--taplo
           - --pre-commit--uv
           - --pyproject
@@ -65,6 +66,14 @@ repos:
         args:
           - --fix
       - id: ruff-format
+  - repo: https://github.com/scop/pre-commit-shfmt
+    rev: v3.12.0-2
+    hooks:
+      - id: shfmt
+  - repo: https://github.com/koalaman/shellcheck-precommit
+    rev: v0.11.0
+    hooks:
+      - id: shellcheck
   - repo: https://github.com/compwa/taplo-pre-commit
     rev: v0.9.3
     hooks:
@@ -77,7 +86,7 @@ repos:
           - --option
           - reorder_keys=true
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.9.22
+    rev: 0.9.24
     hooks:
       - id: uv-lock
         args:
