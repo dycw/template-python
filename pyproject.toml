@@ -4,14 +4,14 @@
 
 [dependency-groups]
   dev = [
-    "dycw-utilities[test]>=0.179.1, <1",
+    "dycw-utilities[test]>=0.179.4, <1",
     "pyright>=1.1.408, <2",
     "rich>=14.2.0, <15",
   ]
 
 [project]
   authors = [{ email = "d.wan@icloud.com", name = "Derek Wan" }]
-  dependencies = ["dycw-utilities>=0.179.1, <1"]
+  dependencies = ["dycw-utilities>=0.179.4, <1"]
   description = "Template for Python packages"
   name = "dycw-template-python"
   readme = "README.md"
