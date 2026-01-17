@@ -3,7 +3,6 @@ revision = 3
 requires-python = ">=3.14"
 
 [options]
-resolution-mode = "lowest-direct"
 prerelease-mode = "disallow"
 
 [[package]]
@@ -84,18 +83,18 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "dycw-utilities", specifier = ">=0.181.0,<1" }]
+requires-dist = [{ name = "dycw-utilities", specifier = ">=0.183.4" }]
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "dycw-utilities", extras = ["test"], specifier = ">=0.181.0,<1" },
-    { name = "pyright", specifier = ">=1.1.408,<2" },
-    { name = "rich", specifier = ">=14.2.0,<15" },
+    { name = "dycw-utilities", extras = ["test"], specifier = ">=0.183.4" },
+    { name = "pyright", specifier = ">=1.1.408" },
+    { name = "rich", specifier = ">=14.2.0" },
 ]
 
 [[package]]
 name = "dycw-utilities"
-version = "0.181.0"
+version = "0.183.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "atomicwrites" },
@@ -104,7 +103,7 @@ dependencies = [
     { name = "whenever" },
 ]
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/5e/78/49040454863e3c1b6857d54ee3735dab1314620888ddbe99f72e5c207ac1/dycw_utilities-0.181.0-py3-none-any.whl", hash = "sha256:42285f092b33bd9fb363bed816a23709a56bef1d7f1e62638f0f7c9bc4fbe82f", size = 213709, upload-time = "2026-01-15T05:22:29.386Z" },
+    { url = "https://files.pythonhosted.org/packages/69/a2/10ae93f47062195d3e6433eebeb10cd7e8c64f33f3214518c1248520ddca/dycw_utilities-0.183.4-py3-none-any.whl", hash = "sha256:a0f2ab9c8f78b8536c00abeebe32447e3280fb6731b49a99eace713aa23b3e52", size = 214142, upload-time = "2026-01-17T14:17:38.823Z" },
 ]
 
 [package.optional-dependencies]
