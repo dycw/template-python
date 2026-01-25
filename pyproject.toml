@@ -3,13 +3,19 @@
   requires = ["uv_build"]
 
 [dependency-groups]
-  dev = ["dycw-utilities[test]>=0.183.4", "pyright>=1.1.408", "rich>=14.2.0"]
+  dev = ["dycw-utilities[test]>=0.186.6", "pyright>=1.1.408", "rich>=14.2.0"]
 
 [project]
   authors = [{ email = "d.wan@icloud.com", name = "Derek Wan" }]
-  dependencies = ["dycw-utilities>=0.183.4"]
+  dependencies = ["dycw-utilities>=0.186.6"]
   description = "Template for Python packages"
   name = "dycw-template-python"
   readme = "README.md"
-  requires-python = ">= 3.14"
+  requires-python = ">= 3.12"
   version = "0.1.0"
+
+[tool]
+  [tool.uv]
+    [tool.uv.build-backend]
+      module-name = "template_python"
+      module-root = "src"
