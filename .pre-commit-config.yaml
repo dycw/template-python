@@ -1,119 +1,129 @@
 repos:
-  - repo: https://github.com/dycw/actions
-    rev: 0.15.5
+  - repo: https://github.com/dycw/pre-commit-hooks
+    rev: 0.14.118
     hooks:
-      - id: conformalize-repo
+      - id: add-hooks
         args:
-          - --ci--pull-request--pyright
-          - --ci--pull-request--pytest--macos
-          - --ci--pull-request--pytest--ubuntu
-          - --ci--pull-request--pytest--all-versions
-          - --ci--pull-request--ruff
-          - --ci--push--tag
+          - --ci-github
           - --description=Template for Python packages
-          - --envrc
-          - --envrc--uv
-          - --gitignore
-          - --package-name=dycw-template-python
-          - --pre-commit--prettier
-          - --pre-commit--python
-          - --pre-commit--ruff
-          - --pre-commit--shell
-          - --pre-commit--taplo
-          - --pre-commit--uv
-          - --pyproject
-          - --pyright
-          - --pytest
-          - --readme
+          - --prettier
+          - --python
+          - --python-package-name-external=dycw-template-python
+          - --python-package-name-internal=template-python
+          - --repo-name=template-generic
           - --repo-name=template-python
-          - --ruff
+          - --toml
         priority: 10
+      - id: add-future-import-annotations
+        priority: 20
+      - id: check-versions-consistent
+        priority: 40
+      - id: format-pre-commit-config
+        priority: 30
       - id: format-requirements
+        priority: 30
+      - id: replace-sequence-str
+        priority: 20
+      - id: run-prek-autoupdate
         priority: 10
-      - id: replace-sequence-strs
+      - id: run-uv-lock
+        priority: 20
+      - id: run-version-bump
+        priority: 20
+      - id: setup-bump-my-version
+        args:
+          - --python-package-name-internal=template-python
+        priority: 20
+      - id: setup-ci-pull-request
+        args:
+          - --repo-name=template-python
+        priority: 20
+      - id: setup-ci-push
+        args:
+          - --python
+        priority: 20
+      - id: setup-coverage
+        priority: 20
+      - id: setup-direnv
+        args:
+          - --python
+        priority: 20
+      - id: setup-git
+        args:
+          - --python
+        priority: 20
+      - id: setup-pre-commit
         priority: 10
-      - id: touch-empty-py
-        priority: 10
-      - id: touch-py-typed
-        priority: 10
+      - id: setup-pyproject
+        args:
+          - --description=Template for Python packages
+          - --python-package-name-external=dycw-template-python
+          - --python-package-name-internal=template-python
+        priority: 20
+      - id: setup-pyright
+        priority: 20
+      - id: setup-pytest
+        args:
+          - --python-package-name-internal=template-python
+        priority: 20
+      - id: setup-readme
+        args:
+          - --repo-name=template-python
+          - --description=Template for Python packages
+        priority: 20
+      - id: setup-ruff
+        priority: 20
+      - id: update-ci-action-versions
+        priority: 20
+      - id: update-ci-extensions
+        priority: 20
       - id: update-requirements
-        priority: 10
+        priority: 20
   - repo: builtin
     hooks:
       - id: check-added-large-files
-        priority: 20
+        priority: 40
       - id: check-case-conflict
-        priority: 20
+        priority: 40
       - id: check-executables-have-shebangs
-        priority: 20
+        priority: 40
       - id: check-json
-        priority: 20
+        priority: 40
       - id: check-json5
-        priority: 20
+        priority: 40
       - id: check-merge-conflict
-        priority: 20
+        priority: 40
       - id: check-symlinks
-        priority: 20
+        priority: 40
       - id: check-toml
-        priority: 20
+        priority: 40
       - id: check-xml
-        priority: 20
+        priority: 40
       - id: check-yaml
-        priority: 20
+        priority: 40
       - id: detect-private-key
-        priority: 20
+        priority: 40
       - id: end-of-file-fixer
-        priority: 10
+        priority: 20
       - id: fix-byte-order-marker
-        priority: 10
+        priority: 20
       - id: mixed-line-ending
         args:
           - --fix=lf
-        priority: 10
+        priority: 20
       - id: no-commit-to-branch
-        priority: 20
+        priority: 40
       - id: trailing-whitespace
-        priority: 10
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v6.0.0
-    hooks:
-      - id: check-illegal-windows-names
         priority: 20
-      - id: destroyed-symlinks
-        priority: 20
-      - id: pretty-format-json
-        args:
-          - --autofix
-        priority: 10
-  - repo: local
-    hooks:
-      - id: prettier
-        name: prettier
-        entry: npx prettier --write
-        language: system
-        types_or:
-          - markdown
-          - yaml
-        priority: 10
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.14.13
+    rev: v0.14.14
     hooks:
       - id: ruff-check
         args:
           - --fix
         priority: 20
       - id: ruff-format
-        priority: 10
-  - repo: https://github.com/scop/pre-commit-shfmt
-    rev: v3.12.0-2
-    hooks:
-      - id: shfmt
-        priority: 10
-  - repo: https://github.com/koalaman/shellcheck-precommit
-    rev: v0.11.0
-    hooks:
-      - id: shellcheck
-        priority: 20
+        priority: 30
   - repo: https://github.com/compwa/taplo-pre-commit
     rev: v0.9.3
     hooks:
@@ -125,15 +135,25 @@ repos:
           - indent_entries=true
           - --option
           - reorder_keys=true
-        priority: 10
-  - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.9.26
+        priority: 40
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
     hooks:
-      - id: uv-lock
+      - id: check-illegal-windows-names
+        priority: 40
+      - id: destroyed-symlinks
+        priority: 40
+      - id: pretty-format-json
         args:
-          - --upgrade
-          - --resolution
-          - highest
-          - --prerelease
-          - disallow
-        priority: 10
+          - --autofix
+        priority: 20
+  - repo: local
+    hooks:
+      - id: prettier
+        name: prettier
+        entry: npx prettier --write
+        language: unsupported
+        types_or:
+          - markdown
+          - yaml
+        priority: 30
