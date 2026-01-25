@@ -242,3 +242,29 @@ shelves/
 tmp/
 
 #### END OF CUSTOM GITIGNORE ##################################################
+
+#### GENERIC GITIGNORE #########################################################
+
+**/*.csv
+**/*.db
+**/*.gz
+**/*.html
+**/*.ipc
+**/*.ipynb
+**/*.pdf
+**/*.pickle
+**/*.shelf
+**/*.sqlite
+**/*.tar.gz
+**/*.tar.lz
+**/*.tmp
+.direnv/
+.logs/
+htmls/
+ipcs/
+pdfs/
+pickles/
+shelves/
+tmp/
+
+#### END OF GENERIC GITIGNORE #################################################
