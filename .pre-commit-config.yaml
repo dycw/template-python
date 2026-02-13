@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/dycw/pre-commit-hooks
-    rev: 0.14.127
+    rev: 0.14.138
     hooks:
       - id: add-hooks
         args:
@@ -10,7 +10,6 @@ repos:
           - --python
           - --python-package-name-external=dycw-template-python
           - --python-package-name-internal=template-python
-          - --repo-name=template-generic
           - --repo-name=template-python
           - --toml
         priority: 10
@@ -116,7 +115,7 @@ repos:
       - id: trailing-whitespace
         priority: 20
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.14.14
+    rev: v0.15.1
     hooks:
       - id: ruff-check
         args:
